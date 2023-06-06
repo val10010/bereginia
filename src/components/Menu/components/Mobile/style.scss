@@ -1,0 +1,130 @@
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  padding: 17px 16px;
+  font-family: var(--secondary-text-font);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--primary-text-color);
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-bg-color);
+  z-index: 100;
+
+
+  .logo {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--primary-text-color);
+  }
+
+  .openBtn {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--primary-text-color);
+  }
+}
+
+.menuBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-bg-color);
+  z-index: 102;
+
+  .item {
+    display: block;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 140%;
+    color: var(--mobile-menu-box-text-color);
+    position: relative;
+    font-family: var(--secondary-text-font);
+
+    &:after {
+      content: '';
+      background: url('../../../../images/item_menu_arrow.svg');
+      position: absolute;
+      top: 14px;
+      width: 17px;
+      height: 17px;
+      margin-left: 10px;
+    }
+  }
+
+
+}
+
+.active {
+  &.menu {
+    z-index: 103;
+
+    .closeBtn {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--primary-text-color);
+    }
+  }
+}
+
+.menuBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 54px;
+  height: calc(100% - 54px);
+  padding: 20px 16px;
+
+  .row {
+    .column {
+      border-bottom: 1px solid #ABABAB;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 0;
+
+      .title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        color: var(--primary-text-color);
+        margin-bottom: 10px;
+      }
+
+      .menuItem {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: var(--secondary-text-color);
+        margin-bottom: 8px;
+        display: inline-flex;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: auto;
+
+    .item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: #535353;
+      margin-bottom: 10px;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

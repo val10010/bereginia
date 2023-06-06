@@ -1,0 +1,101 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    @include title;
+    font-weight: 400;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--primary-border-color);
+
+    @include tabletMobile {
+      border-bottom: none;
+    }
+  }
+
+  .content {
+    display: flex;
+    padding: 20px 0 30px;
+    border-bottom: 1px solid var(--primary-border-color);
+
+    @include tabletMobile {
+      flex-direction: column-reverse;
+      border-bottom: none;
+      padding: 0;
+    }
+
+    .block {
+      margin-right: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .desc {
+        @include desc;
+        max-width: 400px;
+        color: var(--secondary-text-color);
+
+        @include tabletMobile {
+          max-width: 600px;
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+
+      .mainBtn {
+        width: 480px;
+        height: 56px;
+      }
+    }
+
+    .videoBlock {
+      .video {
+        width: 680px;
+        height: 390px;
+        border-radius: 16px;
+
+        @include tablet {
+          width: 700px;
+          height: 380px;
+        }
+
+        @include mobile {
+          height: 200px;
+          width: 328px;
+        }
+      }
+
+      .videoBg {
+        position: relative;
+        background: #616161;
+        width: 680px;
+        height: 390px;
+        border-radius: 16px;
+
+        @include tablet {
+          width: 700px;
+          height: 380px;
+        }
+
+        @include mobile {
+          height: 200px;
+          width: 328px;
+        }
+
+        .videoBtn {
+          background: url('../../../../images/play.svg');
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
