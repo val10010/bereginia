@@ -146,6 +146,7 @@
 
       .hero {
         border-radius: 16px;
+        width: 370px;
 
         @include tablet {
           width: 340px;
@@ -176,6 +177,7 @@
     }
 
     .imgDesc {
+      width: max-content;
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;

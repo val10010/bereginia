@@ -1,0 +1,20 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 130%;
+    margin-bottom: 30px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

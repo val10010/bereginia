@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { buildClassName } from 'Utils';
 import Button from 'Components/Button';
+import { useDispatch } from 'react-redux';
 
 import style from './style.scss';
+import * as actions from "Actions/actions";
 
-const Tariff = ({ price, name, title, list, className = '' }) => {
+const Tariff = ({ price, name, title, list, className = '', classNames= {}, oldPrice, isDetailsNeeded }) => {
+    const dispatch = useDispatch();
+    const handleDetailsBtnClick = useCallback(() => {
+        dispatch(actions.showPopup({
+            contents: [{
+                name: 'TariffDetails'
+            }]
+        }))
+    }, [dispatch]);
+
+    const handleBtnClick = useCallback(() => {
+        dispatch(actions.showPopup({
+            contents: [{
+                name: 'ReservationForm',
+                props: {
+                    className: style.formInPopup,
+                    title: 'План ' + name,
+                    price,
+                    btnonclick: {
+                        actionName: 'showPopup',
+                        props: {
+                            contents: [{
+                                name: 'Success'
+                            }]
+                        }
+                    }
+                }
+            }]
+        }))
+    }, []);
+
     return (
         <div className={`${style.container} ${className}`}>
             <div className={style.header}>
                 <span className={style.name}>{ name }</span>
                 <h5 className={style.title}>{ title }</h5>
             </div>
-            <div className={style.content}>
+            <div className={buildClassName(['content'], style, classNames )}>
+                <p className={style.oldPrice}>{ oldPrice }</p>
                 <p className={style.price}>{ price }</p>
                 <ul className={style.list}>
                     {
@@ -21,12 +55,23 @@ const Tariff = ({ price, name, title, list, className = '' }) => {
                 </ul>
             </div>
             <Button
-                target="_blank"
                 className={style.btn}
-                href="https://t.me/bereginiaabot"
+                onClick={handleBtnClick}
             >
                 Подать заявку
             </Button>
+            {
+                isDetailsNeeded &&
+                    <p className={style.details}>
+                        Продолжайте заниматься с терапевтом онлайн после завершения программы. <br/>
+                        <span
+                            onClick={handleDetailsBtnClick}
+                            className={style.detailsBtn}
+                        >
+                            подробнее
+                        </span>
+                    </p>
+            }
         </div>
     );
 };

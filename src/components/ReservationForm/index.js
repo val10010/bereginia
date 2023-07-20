@@ -1,8 +1,6 @@
 import React from 'react';
 import Button from  'Components/Button';
-import { useDispatch } from 'react-redux';
 import { innerServices } from 'Services';
-import * as actions from 'Actions/actions';
 import { useForm } from 'react-hook-form';
 import Textarea from 'Components/Textarea';
 import Checkbox from 'Components/Checkbox';
@@ -11,8 +9,7 @@ import RadioButton from 'Components/RadioButton';
 
 import style from './style.scss';
 
-export const ReservationForm = ({ fromPage  = 'зі сторінки учнів', price = '350 грн. / 10$', className }) => {
-    const dispatch = useDispatch();
+export const ReservationForm = ({ title, price = '1500 грн. / 38€', className, btnOnClick }) => {
     const {
         register,
         handleSubmit,
@@ -23,33 +20,29 @@ export const ReservationForm = ({ fromPage  = 'зі сторінки учнів'
 
     const onSubmit = async (data) => {
        const res =  await innerServices.sendUserData({
-           formName: 'БРОНЮВАННЯ',
-           fromPage,
+           formName: title,
+           price,
            ...data
        });
 
        if (res.success) {
            reset();
-           dispatch(actions.showPopup({
-               contents: [{
-                   name: 'Success'
-               }]
-           }))
+           btnOnClick && btnOnClick();
        }
     };
 
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}  className={`${style.form} ${className || ''}`}>
-                <h4 className={style.title}>БРОНЮВАННЯ</h4>
+                <h4 className={style.title}>{ title }</h4>
                 <TextInput
                     className={style.input}
-                    placeholder="Призвище Ім’я*"
+                    placeholder="Фамилия Имя*"
                     isError={errors?.name?.message}
                     isValid={touchedFields?.name && !errors?.name && dirtyFields.name}
-                    {...register('name', { required: 'Заповнить це поле' })}
+                    {...register('name', { required: 'Заполните это поле' })}
                 />
-                <p className={style.radioBtnsTitle}>Оберіть месенджер для зв'язку*</p>
+                <p className={style.radioBtnsTitle}>Выберите мессенджер для связи*</p>
                 <div className={style.radioBtns}>
                     {errors?.experience?.message && (
                         <div className={style.errorMessage}>
@@ -58,44 +51,42 @@ export const ReservationForm = ({ fromPage  = 'зі сторінки учнів'
                     )}
                     <RadioButton
                         value="Telegram"
-                        registerProps={register('messenger', { required: 'Це поле обов\'язкове' })}
+                        registerProps={register('messenger', { required: 'Это поле обязательное' })}
                     />
                     <RadioButton
                         value="Viber"
-                        registerProps={register('messenger', { required: 'Це поле обов\'язкове' })}
+                        registerProps={register('messenger', { required: 'Это поле обязательное' })}
                     />
                     <RadioButton
                         value="WhatsApp"
-                        registerProps={register('messenger', { required: 'Це поле обов\'язкове' })}
+                        registerProps={register('messenger', { required: 'Это поле обязательное' })}
                     />
                 </div>
                 <TextInput
-                    placeholder="Телефон або нікнейм з месенджера* "
+                    placeholder="Телефон или никнейм с месенджера* "
                     className={style.input}
                     isError={errors?.phone?.message}
                     isValid={touchedFields?.phone && !errors?.phone && dirtyFields.phone}
                     {...register('phone', {
-                        required: 'Заповнить це поле'
+                        required: 'Это поле обязательное'
                     })}
                 />
                 <Textarea
-                    placeholder="Ціль навчання*"
-                    isError={errors?.purpose?.message}
-                    isValid={touchedFields?.purpose && !errors?.purpose && dirtyFields.purpose}
-                    {...register('purpose', { required: 'Заповнить це поле' })}
+                    placeholder="Коментарий"
+                    {...register('comment')}
                 />
                 <Button className={style.button} disabled={!isValid || isSubmitting}>
-                    записатись
+                    Подать заявку
                 </Button>
                 <Checkbox
                     isError={errors?.consent?.message}
-                    registerProps={register('consent', { required: 'Це поле обов\'язкове' })}
+                    registerProps={register('consent', { required: 'Это поле обязательное' })}
                 >
-                    даю згоду на обробку своїх персональних даних.
-                    Підтверджую, що ознайомлений з Політикою обробки персональних даних
+                    Даю согласие на оброботку своих персональных данных.
+                    Подтверждаю, что ознакомился с Политекой оброботки персональных данных.
                 </Checkbox>
                 <div className={style.total}>
-                    <span>Усього:</span>
+                    <span>Всего:</span>
                     <span className={style.price}>{ price }</span>
                 </div>
             </form>

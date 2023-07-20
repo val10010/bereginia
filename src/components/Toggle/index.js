@@ -4,8 +4,8 @@ import React, {
 
 import style from './style.scss';
 
-const Toggle = ({ className, children }) => {
-    const [isOpen, setOpen] = useState(false);
+const Toggle = ({ className, children, hasOpen  = false }) => {
+    const [isOpen, setOpen] = useState(hasOpen);
 
     return (
         <div className={`${style.content} ${className || ''}`}>

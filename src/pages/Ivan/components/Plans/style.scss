@@ -50,6 +50,10 @@
         position: static;
         transform: none;
       }
+
+      .content {
+        margin-bottom: 90px;
+      }
     }
 
     .vip {
@@ -65,6 +69,24 @@
         border-radius: 16px;
       }
     }
+  }
 
+  .extraTariff {
+    margin-top: 130px;
+    display: flex;
+
+    @include mobile {
+      margin-top: 10px;
+    }
+
+    .desc {
+      color: var(--secondary-text-color);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      max-width: 420px;
+      margin-right: 100px;
+    }
   }
 }

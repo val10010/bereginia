@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 import style from './style.scss';
 
-const Footer = () => {
+const Footer = ({ email, phone }) => {
     return (
         <footer className={style.footer} >
             <nav className={style.nav}>
@@ -27,8 +27,8 @@ const Footer = () => {
                     </div>
                     <div className={style.column}>
                         <h5 className={style.title}>Контакты</h5>
-                        <Link to='mailto:naturalmedical96@gmail.com' className={style.link}>naturalmedical96@gmail.com</Link>
-                        <Link to='tel:+380 67 484 93 08' className={style.link}>+380 67 484 93 08</Link>
+                        <Link to={`mailto:${email}`} className={style.link}>{ email }</Link>
+                        <Link to={`tel:${phone}`} className={style.link}>{ phone }</Link>
                     </div>
                 </div>
             </nav>

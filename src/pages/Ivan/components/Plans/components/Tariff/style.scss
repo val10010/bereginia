@@ -29,6 +29,11 @@
     padding: 20px 30px 0 30px;
     border-bottom: 1px solid var(--primary-border-color);
 
+    @include mobile {
+      height: auto;
+      padding-bottom: 20px;
+    }
+
     .name {
       display: inline-block;
       font-weight: 400;
@@ -50,7 +55,12 @@
 
   .content {
     padding: 40px 30px 0 30px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
+
+    .oldPrice {
+      color: #ABABAB;
+      text-decoration: line-through;
+    }
 
     .price {
       font-weight: 500;
@@ -104,4 +114,27 @@
       border: 1px solid var(--primary-border-color);
     }
   }
+
+  .details {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--secondary-text-color);
+    padding: 0 30px 30px 30px;
+
+    .detailsBtn {
+      color: #298BFF;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.formInPopup {
+  margin-top: 0!important;
+  box-shadow: none!important;
+  border: none!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
 }

@@ -1,15 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import Menu from 'Components/Menu';
 import Image from 'Components/Image';
 import { smoothScrollTo } from 'Utils';
 import Button from 'Components/Button';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as actions from 'Actions/actions';
 import { DeviceContext } from 'Contexts/Device/DeviceContext';
 
 import style from './style.scss';
 
 const Header = () => {
     const { isDesktop, isMobile } = useContext(DeviceContext);
+
+    const dispatch = useDispatch();
+
+    const handleBtnClick = useCallback(() => {
+        dispatch(actions.showPopup({
+            contents: [{
+                name: 'ReservationForm',
+                props: {
+                    className: style.formInPopup,
+                    title: 'Консультация',
+                    btnonclick: {
+                        actionName: 'showPopup',
+                        props: {
+                            contents: [{
+                                name: 'Success'
+                            }]
+                        }
+                    }
+                }
+            }]
+        }))
+    }, []);
 
     return (
         <header className={style.header} id="top">
@@ -33,7 +57,7 @@ const Header = () => {
                         опорно двигательного аппарата у детей и взрослых.
                     </p>
                     {
-                        isMobile &&  <Button href="https://t.me/bereginiaabot" target="_blank" className={style.btn} >Записаться на консультацию</Button>
+                        isMobile &&  <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
                     }
 
                     {
@@ -47,7 +71,7 @@ const Header = () => {
                             </span>
                             </div>
                             <div className={style.box}>
-                                <Button href="https://t.me/bereginiaabot" target="_blank" className={style.btn} >Записаться на консультацию</Button>
+                                <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
                                 { isDesktop && <Image src="../../../../images/ivan/header_leg.jpg" /> }
                             </div>
                         </div>

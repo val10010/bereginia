@@ -39,7 +39,6 @@ const Mobile = () => {
                                     <Link to='/irina' className={style.menuItem}>Ирина Газин</Link>
                                 </li>
                                 <li className={style.column}>
-                                    <h5 className={style.title}>Курс</h5>
                                     <button
                                         className={style.menuItem}
                                         onClick={() => handleItemMenuClick('plans')}
@@ -50,7 +49,7 @@ const Mobile = () => {
                                         className={style.menuItem}
                                         onClick={() => handleItemMenuClick('steps')}
                                     >
-                                        Этапы курса
+                                        Этапы
                                     </button>
                                     <button
                                         className={style.menuItem}

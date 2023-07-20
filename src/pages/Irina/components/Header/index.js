@@ -15,8 +15,8 @@ const Header = () => {
         <header className={style.header} id="top">
             <Menu>
                 <div className={style.menuItems}>
-                    <button onClick={() => smoothScrollTo('plans')} className={style.item}>Тарифы курса</button>
-                    <button onClick={() => smoothScrollTo('steps')} className={style.item}>Как проходит курс</button>
+                    <button onClick={() => smoothScrollTo('plans')} className={style.item}>Консультации</button>
+                    <button onClick={() => smoothScrollTo('steps')} className={style.item}>Как проходит консультация</button>
                     <button onClick={() => smoothScrollTo('reviews')} className={style.item}>Отзывы</button>
                 </div>
                 {
@@ -32,7 +32,7 @@ const Header = () => {
                         Основатель и руководитель Центра Восстановительной Медицины и Нутрициологии «БЕРЕГИНЯ»
                     </p>
                     {
-                        isMobile &&  <Button href="https://t.me/bereginiaabot" target="_blank" className={style.btn} >Записаться на консультацию</Button>
+                        isMobile &&  <Button href="https://docs.google.com/forms/d/e/1FAIpQLSdr7j_0PSmhRgYKK5LkBmLopgeWMDnckhOYpxucBq6gL_9MSw/viewform?pli=1" target="_blank" className={style.btn} >Записаться на консультацию</Button>
                     }
 
                     {
@@ -46,7 +46,7 @@ const Header = () => {
                             </span>
                             </div>
                             <div className={style.box}>
-                                <Button href="https://t.me/bereginiaabot" target="_blank" className={style.btn} >Записаться на консультацию</Button>
+                                <Button href="https://docs.google.com/forms/d/e/1FAIpQLSdr7j_0PSmhRgYKK5LkBmLopgeWMDnckhOYpxucBq6gL_9MSw/viewform?pli=1" target="_blank" className={style.btn} >Записаться на консультацию</Button>
                                 { isDesktop && <Image src="../../../../images/irina/header_flower.jpg" /> }
                             </div>
                         </div>
@@ -59,7 +59,10 @@ const Header = () => {
                             Превентивный нутрициолог
                         </span>
                         <span className={style.imgDesc}>
-                            натуропат
+                            Висцеральный терапевт
+                        </span>
+                        <span className={style.imgDesc}>
+                            Натуропат
                         </span>
                     </div>
                 </div>

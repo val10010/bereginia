@@ -5,8 +5,8 @@ import style from './style.scss';
 export const Success = ({ key }) => {
     return (
         <div key={key} className={style.container}>
-            <p className={style.infoTitle}>Дякую, ваші дані успішно відправлені!</p>
-            <p className={style.infoSubtitle}>З вами зв'яжуться найближчим часом.</p>
+            <p className={style.infoTitle}>Спасибо, ваши данные успешно отправленны!</p>
+            <p className={style.infoSubtitle}>С вами свяжутся ближайшее время.</p>
         </div>
     );
 };

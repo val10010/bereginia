@@ -27,8 +27,9 @@ const slideTransitionStyles = css`
   }
 `;
 
-const Slider = ({ reviews, children }) => {
+const Slider = ({ reviews = [], children, isBubblesNeeded, isButtonNeeded = true, className }) => {
     const [index, setIndex] = useState(0);
+    const bubbles = isBubblesNeeded &&  Array.from({length: reviews.length}, (_, i) => i);
 
     const onNext = () => {
         setIndex(index < reviews.length - 1 ? index + 1 : index);
@@ -41,13 +42,16 @@ const Slider = ({ reviews, children }) => {
     return (
         <>
             <Global styles={slideTransitionStyles} />
-                <div className={style.wrapper}>
-                    <div className={style.buttons} hidden={reviews.length <= 1}>
-                        <button onClick={onPrev} disabled={index === 0} className={style.prevButton}>
-                        </button>
-                        <button onClick={onNext} disabled={index === reviews.length - 1} className={style.nextButton}>
-                        </button>
-                    </div>
+                <div className={`${className}`}>
+                    {
+                        isButtonNeeded &&
+                        <div className={style.buttons} hidden={reviews.length <= 1}>
+                            <button onClick={onPrev} disabled={index === 0} className={style.prevButton}>
+                            </button>
+                            <button onClick={onNext} disabled={index === reviews?.length - 1} className={style.nextButton}>
+                            </button>
+                        </div>
+                    }
                     <SwitchTransition>
                         <CSSTransition
                             key={reviews[index]}
@@ -57,6 +61,22 @@ const Slider = ({ reviews, children }) => {
                             { children[index] }
                         </CSSTransition>
                     </SwitchTransition>
+                    {
+                        isBubblesNeeded &&
+                        <div className={style.bubbles}>
+                            {
+                                bubbles.map(numb => {
+                                    return (
+                                        <span
+                                            key={numb}
+                                            onClick={() => setIndex(numb)}
+                                            className={`${style.bubble} ${numb === index ? style.bubbleActive : ''}`}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+                    }
                 </div>
         </>
     );

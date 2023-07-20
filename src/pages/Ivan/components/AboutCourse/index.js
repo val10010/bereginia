@@ -30,7 +30,7 @@ const AboutCourse = () => {
                         </div>
                     }
                     {
-                      isShow && <video src="../../../../videos/ivan/about-services.mp4" className={style.video} controls autoPlay>
+                      isShow && <video src="../../../../videos/ivan/about-services.mp4" className={style.video} controls autoPlay preload="metadata">
                             Ваш браузер не поддерживает воспроизведение видео.
                         </video>
                     }

@@ -13,8 +13,8 @@ const Reviews = () => {
             <div className={style.content}>
                 <div className={style.descContainer}>
                     <p className={style.desc}>
-                        Нашу программу прошло больше 1000 человек,
-                        которые вылечили обширные проблема ОДА и себя и детей.
+                        Нашу программу проходят более 3000 пациентов в год,
+                        у которых в 99% наблюдается положительная динамика уже на базовом курсе.
                     </p>
                 </div>
                 <Slider reviews={REVIEWS}>
