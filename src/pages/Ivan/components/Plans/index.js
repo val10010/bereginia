@@ -28,9 +28,12 @@ const Plans = () => {
                     name="Премиум"
                     list={PREMIUM}
                     classNames={style}
-                    isDetailsNeeded={true}
                     className={style.premium}
                     title="Вальгус-3D осанка / Сколиоз с терапевтом"
+                    detailsContent={{
+                        priceForOne: '800 грн. / 20€',
+                        priceForFive: '3000 грн. / 74€'
+                    }}
                 />
                 <Tariff
                     price="999€"
@@ -39,8 +42,11 @@ const Plans = () => {
                     list={VIP}
                     classNames={style}
                     className={style.vip}
-                    isDetailsNeeded={true}
                     title="VIP с Газин И.В Сколиоз / Вальгус"
+                    detailsContent={{
+                        priceForOne: '1500 грн. / 38€',
+                        priceForFive: '6000 грн. / 150€'
+                    }}
                 />
             </div>
             <div className={style.extraTariff}>
@@ -60,8 +66,11 @@ const Plans = () => {
                     list={EXTRA}
                     classNames={style}
                     className={style.extra}
-                    isDetailsNeeded={true}
                     title="Вальгус-3D осанка / Сколиоз с терапевтом"
+                    detailsContent={{
+                        priceForOne: '800 грн. / 20€',
+                        priceForFive: '3000 грн. / 74€'
+                    }}
                 />
             </div>
         </div>

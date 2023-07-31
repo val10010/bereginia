@@ -7,12 +7,15 @@ import { useDispatch } from 'react-redux';
 import style from './style.scss';
 import * as actions from "Actions/actions";
 
-const ExtraTariff = ({ price, firstName, secondName, title, list, className = '', classNames= {}, oldPrice, isDetailsNeeded }) => {
+const ExtraTariff = ({ price, firstName, secondName, title, list, className = '', classNames= {}, oldPrice, detailsContent }) => {
     const dispatch = useDispatch();
     const handleDetailsBtnClick = useCallback(() => {
         dispatch(actions.showPopup({
             contents: [{
-                name: 'TariffDetails'
+                name: 'TariffDetails',
+                props: {
+                    ...detailsContent
+                }
             }]
         }))
     }, [dispatch]);
@@ -67,7 +70,7 @@ const ExtraTariff = ({ price, firstName, secondName, title, list, className = ''
                 Подать заявку
             </Button>
             {
-                isDetailsNeeded &&
+                detailsContent &&
                     <p className={style.details}>
                         Продолжайте заниматься с терапевтом онлайн после завершения программы. <br/>
                         <span

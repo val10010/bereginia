@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import Header from './components/Header';
+import Header from 'Main/pages/Ivan/components/Header'
 const Footer = lazy(() => import('Components/Footer'));
 
 import style from './style.scss';
