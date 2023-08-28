@@ -1,10 +1,10 @@
 .container {
-  width: 50%;
+  width: 400px;
   border-radius: 16px;
+  border: 1px solid var(--primary-border-color);
   display: flex;
   flex-direction: column;
-  background: #fff;
-  padding: 20px 30px 30px 30px;
+  background: var(--primary-bg-color);
 
   @include tabletMobile {
     width: 100%;
@@ -25,7 +25,14 @@
   }
 
   .header {
-    margin-bottom: 40px;
+    height: 140px;
+    padding: 20px 30px 0 30px;
+    border-bottom: 1px solid var(--primary-border-color);
+
+    @include mobile {
+      height: auto;
+      padding-bottom: 20px;
+    }
 
     .name {
       display: inline-block;
@@ -47,7 +54,8 @@
   }
 
   .content {
-    margin-bottom: 50px;
+    padding: 40px 30px 0 30px;
+    margin-bottom: 30px;
 
     .oldPrice {
       color: #ABABAB;
@@ -69,6 +77,11 @@
       padding-left: 13px;
       position: relative;
 
+      @include tabletMobile {
+        font-size: 14px;
+        line-height: 130%;
+      }
+
       .item {
         margin-bottom: 16px;
 
@@ -83,26 +96,18 @@
         }
       }
     }
-
-    .bonus {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 130%;
-      color: #616161;
-      margin-top: 16px;
-    }
   }
 
   .btn {
-    background: #56A0F6;
-    margin: auto 0 30px 0;
-    width: 100%;
-    color: #fff;
+    background: var(--tariff-btn-bg-color);
+    margin: auto 30px 30px 30px;
+    width: 340px;
+    color: var(--tariff-btn-text-color);
 
     @include tabletMobile {
       font-size: 16px;
       line-height: 110%;
+      width: calc(100% - 60px)!important;
     }
 
     &:hover {
@@ -116,6 +121,7 @@
     font-weight: 400;
     line-height: 130%;
     color: var(--secondary-text-color);
+    padding: 0 30px 30px 30px;
 
     .detailsBtn {
       color: #298BFF;
@@ -131,8 +137,4 @@
   border: none!important;
   padding-top: 0!important;
   padding-bottom: 0!important;
-}
-
-.highlight {
-  color: #56A0F6;
 }

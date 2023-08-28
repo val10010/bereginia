@@ -4,6 +4,7 @@ import FAQ from './components/FAQ';
 import Plans from './components/Plans';
 import Header from './components/Header';
 import Awards from './components/Awards';
+import Webinar from './components/Webinar';
 import Reviews from './components/Reviews';
 import AboutCourse from './components/AboutCourse';
 import CourseSteps from './components/CourseSteps';
@@ -21,6 +22,7 @@ const Home = () => {
             <AboutServices/>
             <AboutConsultation/>
             <AboutCourse/>
+            <Webinar/>
             <Plans/>
             <CourseSteps/>
             <Reviews/>

@@ -43,11 +43,11 @@ const Tariff = ({ price, name, title, list, className = '', classNames= {}, oldP
     return (
         <div className={`${style.container} ${className}`}>
             <div className={style.header}>
-                <span className={buildClassName(['name'], style, classNames )}>{ name }</span>
+                <span className={style.name}>{ name }</span>
                 <h5 className={style.title}>{ title }</h5>
             </div>
             <div className={buildClassName(['content'], style, classNames )}>
-                { oldPrice && <p className={style.oldPrice}>{ oldPrice }</p> }
+                <p className={style.oldPrice}>{ oldPrice }</p>
                 <p className={style.price}>{ price }</p>
                 <ul className={style.list}>
                     {
@@ -56,7 +56,6 @@ const Tariff = ({ price, name, title, list, className = '', classNames= {}, oldP
                         ))
                     }
                 </ul>
-                <p className={style.bonus}><span className={style.highlight}>Бонус:</span>  доступ к вебинару "Здоровье осанки и стоп у детей"</p>
             </div>
             <Button
                 className={style.btn}
@@ -67,7 +66,11 @@ const Tariff = ({ price, name, title, list, className = '', classNames= {}, oldP
             {
                 detailsContent &&
                     <p className={style.details}>
-                        Продолжайте заниматься с терапевтом онлайн после завершения программы. <span onClick={handleDetailsBtnClick} className={style.detailsBtn} >
+                        Продолжайте заниматься с терапевтом онлайн после завершения программы. <br/>
+                        <span
+                            onClick={handleDetailsBtnClick}
+                            className={style.detailsBtn}
+                        >
                             подробнее
                         </span>
                     </p>
