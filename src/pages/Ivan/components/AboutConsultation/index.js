@@ -32,7 +32,7 @@ const AboutConsultation = () => {
     }, []);
 
     return (
-        <section className={style.container}>
+        <div className={style.container} id="consultation">
             <div className={style.content}>
                 <h5 className={style.title}>Как проходит онлайн диагностика?</h5>
                 <div className={style.contentBlock}>
@@ -80,7 +80,7 @@ const AboutConsultation = () => {
                     ))
                 }
             </Slider>
-        </section>
+        </div>
     );
 };
 

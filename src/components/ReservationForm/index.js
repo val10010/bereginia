@@ -9,7 +9,7 @@ import RadioButton from 'Components/RadioButton';
 
 import style from './style.scss';
 
-export const ReservationForm = ({ title, price = '1500 грн. / 38€', className, btnOnClick }) => {
+export const ReservationForm = ({ title, price = '2000 грн.', className, btnOnClick }) => {
     const {
         register,
         handleSubmit,

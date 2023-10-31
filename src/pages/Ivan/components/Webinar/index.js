@@ -31,7 +31,7 @@ const Webinar = () => {
     }, []);
 
     return (
-        <section className={style.container}>
+        <section className={style.container} id="webinar">
             <div className={style.content}>
                 <div className={style.top}>
                     <p className={style.sticker}>Запись Вебинара на тему</p>
