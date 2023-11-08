@@ -1,0 +1,43 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    @include title;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+  }
+
+  .tariffs {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+
+    @include tabletMobile {
+      flex-direction: column;
+    }
+
+    .premium {
+      --tariff-name-bg-color: #fff;
+      --tariff-name-text-color: #fff;
+
+      .name {
+         background: #fff;
+         border: 1px solid #56A0F6;
+         color: #56A0F6;
+      }
+
+    }
+
+    .vip {
+      --tariff-name-bg-color: #56A0F6;
+      --tariff-name-text-color: #fff;
+    }
+  }
+}

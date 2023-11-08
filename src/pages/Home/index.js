@@ -9,7 +9,7 @@ const Home = () => {
         <div className={style.main}>
             <Header/>
             <Footer email="naturalmedical96@gmail.com" phone="+380 67 484 93 08"/>
-        </div>
+        </div>  
     );
 };
 
