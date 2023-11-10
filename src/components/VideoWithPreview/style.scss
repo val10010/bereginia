@@ -1,0 +1,47 @@
+.videoBlock {
+  --video-block-height: 390px;
+  --video-block-width: 680px;
+  width: 100%;
+  height: 100%;
+
+    @include tablet {
+      --video-block-width: 700px;
+      --video-block-height: 380px;
+    }
+
+    @include mobile {
+      --video-block-width: 328px;
+      --video-block-height: 200px;
+    }
+
+  .video {
+    width: 100%;
+    height: var(--video-block-height);
+    display: block;
+    border-radius: 16px;
+  }
+
+  .videoBg {
+    position: relative;
+    background: #616161;
+    border-radius: 16px;
+    width: var(--video-block-width);
+    height: var(--video-block-height);
+
+    .videoBgImg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .videoBtn {
+      background: url('../../images/play.svg');
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

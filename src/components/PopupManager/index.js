@@ -16,6 +16,8 @@ const PopupManager = () => {
         <Popup
             isOpen={popup.isOpen}
             onClose={handleOnClose}
+            classNames={popup.classNames}
+            isFloatCloseBtn={popup.isFloatCloseBtn}
         >
             {
                 popup.contents && popup.contents.map(item =>

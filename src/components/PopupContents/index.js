@@ -1,3 +1,4 @@
+export { Video } from './Video';
 export { Success } from './Success';
 export { OrderForm } from './OrderForm';
 export { CallbackForm } from './CallbackForm';
