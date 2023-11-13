@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import Menu from 'Components/Menu';
 import Image from 'Components/Image';
-import { smoothScrollTo } from 'Utils';
 import Button from 'Components/Button';
-import { Link } from 'react-router-dom';
 import { DeviceContext } from 'Contexts/Device/DeviceContext';
 
 import style from './style.scss';
@@ -13,18 +11,7 @@ const Header = () => {
 
     return (
         <header className={style.header} id="top">
-            <Menu>
-                <div className={style.menuItems}>
-                    <button onClick={() => smoothScrollTo('plans')} className={style.item}>Консультации</button>
-                    <button onClick={() => smoothScrollTo('steps')} className={style.item}>Как проходит консультация</button>
-                    <button onClick={() => smoothScrollTo('reviews')} className={style.item}>Отзывы</button>
-                </div>
-                {
-                  isDesktop && <div className={style.menuItems}>
-                        <Link to="/ivan" className={style.item}>Иван Газин</Link>
-                    </div>
-                }
-            </Menu>
+            <Menu/>
             <div className={style.container}>
                 <div className={style.content}>
                     <h2 className={style.title}>Ирина Газин</h2>

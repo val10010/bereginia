@@ -13,6 +13,7 @@ const App =  () => {
 
     return (
        <DeviceProvider>
+
            { content }
        </DeviceProvider>
     );

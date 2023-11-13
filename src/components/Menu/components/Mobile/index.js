@@ -1,7 +1,7 @@
-import { smoothScrollTo } from 'Utils';
 import { Link } from 'react-router-dom';
 import { useLockBodyScroll } from 'Hooks';
 import React, { useState, useCallback } from 'react';
+import { TABLET_MOBILE_LINKS } from '../../constants';
 
 import style from './style.scss';
 
@@ -12,10 +12,6 @@ const Mobile = () => {
 
     const handleCloseBtnClick = useCallback(() => setActive(false), [setActive])
     const handleOpenBtnClick = useCallback(() => setActive(true), [setActive])
-    const handleItemMenuClick = useCallback((id) => {
-        setActive(false);
-        smoothScrollTo(id);
-    }, [setActive, smoothScrollTo]);
 
     return (
        <>
@@ -35,34 +31,19 @@ const Mobile = () => {
                             <ul className={style.row}>
                                 <li className={style.column}>
                                     <h5 className={style.title}>Специалисты</h5>
-                                    <Link to='/ivan' className={style.menuItem}>Иван Газин</Link>
-                                    <Link to='/irina' className={style.menuItem}>Ирина Газин</Link>
+                                    {
+                                        TABLET_MOBILE_LINKS.specialists.map(({ path, name }) => (
+                                            <Link to={path} className={style.menuItem}>{ name }</Link>
+                                        ))
+                                    }
                                 </li>
                                 <li className={style.column}>
-                                    <button
-                                        className={style.menuItem}
-                                        onClick={() => handleItemMenuClick('plans')}
-                                    >
-                                        Тарифы
-                                    </button>
-                                    <button
-                                        className={style.menuItem}
-                                        onClick={() => handleItemMenuClick('steps')}
-                                    >
-                                        Этапы
-                                    </button>
-                                    <button
-                                        className={style.menuItem}
-                                        onClick={() => handleItemMenuClick('reviews')}
-                                    >
-                                        Отзывы
-                                    </button>
-                                    <button
-                                        className={style.menuItem}
-                                        onClick={() => handleItemMenuClick('faq')}
-                                    >
-                                        Fag
-                                    </button>
+                                    <h5 className={style.title}>Продукты</h5>
+                                    {
+                                        TABLET_MOBILE_LINKS.products.map(({ path, name }) => (
+                                            <Link to={path} className={style.menuItem}>{ name }</Link>
+                                        ))
+                                    }
                                 </li>
                                 <li className={style.column}>
                                     <h5 className={style.title}>Контакты</h5>

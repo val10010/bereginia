@@ -3,6 +3,7 @@ import Map from 'Components/Map';
 import { ReactSVG } from 'react-svg'
 import { smoothScrollTo } from 'Utils';
 import { Link } from 'react-router-dom';
+import { TABLET_MOBILE_LINKS } from './constants';
 
 
 import style from './style.scss';
@@ -15,15 +16,19 @@ const Footer = ({ email, phone }) => {
                 <div className={style.row}>
                     <div className={style.column}>
                         <h5 className={style.title}>Специалисты</h5>
-                        <Link to='/ivan' className={style.link}>Иван Газин</Link>
-                        <Link to='/irina' className={style.link}>Ирина Газин</Link>
+                        {
+                            TABLET_MOBILE_LINKS.specialists.map(({ path, name }) => (
+                                <Link to={path} className={style.link}>{ name }</Link>
+                            ))
+                        }
                     </div>
                     <div className={style.column}>
-                        <h5 className={style.title}>Курс</h5>
-                        <button onClick={() => smoothScrollTo('plans')} className={style.link}>Тарифы</button>
-                        <button onClick={() => smoothScrollTo('steps')} className={style.link}>Этапы курса</button>
-                        <button onClick={() => smoothScrollTo('reviews')} className={style.link}>Отзывы</button>
-                        <button onClick={() => smoothScrollTo('faq')} className={style.link}>Fag</button>
+                        <h5 className={style.title}>Продукты</h5>
+                        {
+                            TABLET_MOBILE_LINKS.products.map(({ path, name }) => (
+                                <Link to={path} className={style.link}>{ name }</Link>
+                            ))
+                        }
                     </div>
                     <div className={style.column}>
                         <h5 className={style.title}>Контакты</h5>

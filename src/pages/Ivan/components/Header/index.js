@@ -1,9 +1,7 @@
 import React, { useContext, useCallback } from 'react';
 import Menu from 'Components/Menu';
 import Image from 'Components/Image';
-import { smoothScrollTo } from 'Utils';
 import Button from 'Components/Button';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as actions from 'Actions/actions';
 import { DeviceContext } from 'Contexts/Device/DeviceContext';
@@ -37,18 +35,7 @@ const Header = () => {
 
     return (
         <header className={style.header} id="top">
-            <Menu>
-                <div className={style.menuItems}>
-                    <button onClick={() => smoothScrollTo('plans')} className={style.item}>Тарифы курса</button>
-                    <button onClick={() => smoothScrollTo('steps')} className={style.item}>Как проходит курс</button>
-                    <button onClick={() => smoothScrollTo('reviews')} className={style.item}>Отзывы</button>
-                </div>
-                {
-                  isDesktop && <div className={style.menuItems}>
-                        <Link to="/irina" className={style.item}>Ирина Газин</Link>
-                    </div>
-                }
-            </Menu>
+            <Menu/>
             <div className={style.container}>
                 <div className={style.content}>
                     <h2 className={style.title}>Иван Газин</h2>

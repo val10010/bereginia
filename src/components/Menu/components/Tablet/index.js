@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useCallback } from 'react';
+import { TABLET_MOBILE_LINKS } from '../../constants';
 
 import style from './style.scss';
 
@@ -26,8 +27,19 @@ const Desktop = ({ children }) => {
                             <ul className={style.row}>
                                 <li className={style.column}>
                                     <h5 className={style.title}>Специалисты</h5>
-                                    <Link to='/ivan' className={style.menuItem}>Иван Газин</Link>
-                                    <Link to='/irina' className={style.menuItem}>Ирина Газин</Link>
+                                    {
+                                        TABLET_MOBILE_LINKS.specialists.map(({ path, name }) => (
+                                            <Link to={path} className={style.menuItem}>{ name }</Link>
+                                        ))
+                                    }
+                                </li>
+                                <li className={style.column}>
+                                    <h5 className={style.title}>Продукты</h5>
+                                    {
+                                        TABLET_MOBILE_LINKS.products.map(({ path, name }) => (
+                                            <Link to={path} className={style.menuItem}>{ name }</Link>
+                                        ))
+                                    }
                                 </li>
                                 <li className={style.column}>
                                     <h5 className={style.title}>Контакты</h5>
