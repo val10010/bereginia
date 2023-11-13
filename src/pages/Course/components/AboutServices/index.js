@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from "Components/Image";
 
 import { LIST } from './constants';
 
@@ -7,14 +8,29 @@ import style from './style.scss';
 const AboutServices = () => {
     return (
         <div className={style.container}>
-            <h2 className={style.title}>Мы лечим заболевания опорно двигательного аппарата</h2>
             <div className={style.content}>
-                <p className={style.desc}>
-                    Симпотомы нарушений ода очень обширны.
-                    От вальгусной установки стоп до сколиоза, что приводит к неприятным последствиям. Мы даем полный анализ всех проблем и пути их решения
-                </p>
                 <div className={style.block}>
-                    <h3 className={style.listTitle}>Последствия нарушения опорно двигательного аппарата</h3>
+                    <div className={style.courseFor}>
+                        <h2 className={style.title}>
+                            Для кого подойдет наш курс
+                        </h2> 
+
+                        <p className={style.subTitle}>
+                            Курс подойдет детям 
+                            <p className={style.blueText} >от 3 до 18 лет</p>
+                            со следующими нарушениями
+                        </p>
+
+                        <div className={style.pictures}>
+                            <Image src={'../../../../images/course/CourseFor/1.png'}/>
+                            <Image src={'../../../../images/course/CourseFor/2.png'}/>
+                            <Image src={'../../../../images/course/CourseFor/3.png'}/>
+                            <Image src={'../../../../images/course/CourseFor/4.png'}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={style.block}>
                     <ul className={style.list}>
                         {
                             LIST.map(item => (

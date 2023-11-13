@@ -1,0 +1,67 @@
+.container {
+    @include container;
+    margin-bottom: 100px;
+  
+    @include tabletMobile {
+      margin-bottom: 80px;
+    }
+  
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title {
+            font-family: Inter;
+            font-size: 50px;
+            font-weight: 500;
+            line-height: 65px;
+        }
+        
+        .subTitle {
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 23px;
+            color: var(--secondary-text-color);
+        }
+
+        .blueText {
+            display: inline;
+            padding: 0 5px;
+            color: #56A0F6;
+        }
+
+        .cardList {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            gap: 30px;
+
+            .card {
+                padding: 30px;
+                border-radius: 20px;
+                width: 380px;
+                background: var(--tertiary-button-bg-color);
+
+                .cardTitle {
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    color: var(--secondary-text-color);
+                    margin-bottom: 20px;
+                }
+
+                .cardDescription {
+                    font-family: Inter;
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 31px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+}

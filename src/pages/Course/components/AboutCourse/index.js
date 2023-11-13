@@ -1,5 +1,4 @@
 import { smoothScrollTo } from 'Utils';
-import Button from 'Components/Button';
 import React, { useContext, useState } from 'react';
 import { DeviceContext } from 'Contexts/Device/DeviceContext';
 
@@ -11,18 +10,29 @@ const AboutCourse = () => {
 
     return (
         <section className={style.container}>
-            <h4 className={style.title}>
-                Курс Ивана Газина - ваше <br/> решение проблемы
-            </h4>
-            <div className={style.content}>
-                <div className={style.block}>
-                    <p className={style.desc}>
-                        Мы создали курс, который поможет справится
-                        с всеми возможными проблемами опорно двигательного
-                        аппарата, приложив нужное количество усилий и дисциплины
+            <div className={style.header}>
+                <h4 className={style.title}>
+                    Про Курс
+                </h4>
+                <div className={style.description}>
+                    <p>
+                        Метод коррекции сколиоза по немецкой методике
+                        <h4 className={style.name}> Катарины Шрот</h4> является золотым стандартом лечения 
+                        без операции и совершил прорыв в лечении сколиоза!
                     </p>
-                    {isDesktop && <Button onClick={() => smoothScrollTo('plans')} variant="secondary" className={style.mainBtn}>перейти к тарифам</Button>}
+                    <p>
+                        Выявляем и корректируем дисплазию соединительной 
+                        ткани, которая приводит к вальгусу и сколиозу.
+                    </p>
+                    <p>
+                        В команде с опытным нутрициологом по показаниям: 
+                        работаем с дефицитными состояниями микро- и макроэлементов крови.
+                    </p>
                 </div>
+            </div>
+
+            
+            <div className={style.content}>
                 <div className={style.videoBlock}>
                     {
                        !isShow && <div className={style.videoBg}>
@@ -30,9 +40,9 @@ const AboutCourse = () => {
                         </div>
                     }
                     {
-                      isShow && <video src="../../../../videos/ivan/about-services.mp4" className={style.video} controls autoPlay preload="metadata">
-                            Ваш браузер не поддерживает воспроизведение видео.
-                        </video>
+                      // isShow && <video src="../../../../videos/ivan/about-services.mp4" className={style.video} controls autoPlay preload="metadata">
+                      //       Ваш браузер не поддерживает воспроизведение видео.
+                      //   </video>
                     }
                 </div>
             </div>

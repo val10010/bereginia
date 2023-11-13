@@ -6,11 +6,40 @@
     margin-bottom: 80px;
   }
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .title {
+      font-family: Inter;
+      font-size: 50px;
+      font-weight: 500;
+      line-height: 65px;
+    }
+
+    .description {
+      width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23px;
+
+      .name {
+        display: inline;
+        color: #56A0F6;
+      }
+    }
+  }
+
   .title {
     @include title;
     font-weight: 400;
     padding-bottom: 30px;
-    border-bottom: 1px solid var(--primary-border-color);
 
     @include tabletMobile {
       border-bottom: none;
@@ -19,38 +48,6 @@
 
   .content {
     display: flex;
-    padding: 20px 0 30px;
-    border-bottom: 1px solid var(--primary-border-color);
-
-    @include tabletMobile {
-      flex-direction: column-reverse;
-      border-bottom: none;
-      padding: 0;
-    }
-
-    .block {
-      margin-right: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      .desc {
-        @include desc;
-        max-width: 400px;
-        color: var(--secondary-text-color);
-
-        @include tabletMobile {
-          max-width: 600px;
-          width: 100%;
-          margin-top: 20px;
-        }
-      }
-
-      .mainBtn {
-        width: 480px;
-        height: 56px;
-      }
-    }
 
     .videoBlock {
       .video {
@@ -71,9 +68,9 @@
 
       .videoBg {
         position: relative;
-        background: #616161;
-        width: 680px;
-        height: 390px;
+        background: url('../../../../images//course/video-bg.png');
+        width: 1200px;
+        height: 650px;
         border-radius: 16px;
 
         @include tablet {

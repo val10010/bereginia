@@ -31,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 0 43px;
+    padding: 60px 0 0;
 
     @include tablet {
       padding: 40px 0 50px;
@@ -42,9 +42,11 @@
     }
 
     .content {
+      background: #FFFFFF;
+      border-radius: 20px;
       margin-right: 40px;
-      max-width: 760px;
-      width: 100%;
+      padding: 30px;
+      min-width: 100%;
 
       @include tablet {
         margin-right: 20px;
@@ -54,145 +56,93 @@
         margin-right: 0;
       }
 
-      .title {
-        @include mainTitle;
-        font-weight: 200;
-        margin-top: 34px;
-
-        @include tablet {
-          margin-bottom: 10px;
-          margin-top: 0;
-        }
-      }
-
-      .desc {
-        @include desc;
-        max-width: 410px;
-        margin-left: auto;
-        color: var(--secondary-text-color);
-        font-weight: 400;
-        margin-bottom: 20px;
-
-        @include tabletMobile {
-          max-width: 300px;
-          margin-left: 0;
-        }
-      }
-
-      .block {
+      .titleFisrt {
         display: flex;
-        justify-content: space-between;
+        font-family: var(--primary-text-font);
+        color: var(--primary-text-color);
+        text-transform: uppercase;
+        font-size: 100px;
+        font-weight: 600;
+        line-height: 120px;
+
+        .titlePart {
+          color: #56A0F6;
+        }
+
+        .titleIcon {
+          margin: 0 25px;
+        }
+      }
+
+      .headerCourse {
+        display: flex;
         position: relative;
+        margin-top: 30px;
 
-        @include tablet {
-          flex-direction: column-reverse;
-        }
+        .course {
+          margin-left: 40px;
+          color: var(--primary-text-color);
+          font-family: var(--primary-text-font);
 
-        .happyClientBlock {
-          position: relative;
+          .courseTitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21px;
+            padding: 8px 10px;
+            border: 1px var(--primary-text-color) solid;
+            border-radius: 10px;
+            width: fit-content;
+          }
 
-          .happyClient {
-            width: 260px;
-            height: 260px;
-            border-radius: 16px;
+          .courseSubtitle {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 23px;
+            max-width: 440px;
+          }
 
-            @include tablet {
-              width: 210px;
-              height: 210px;
+          .courseDescription {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 23px;
+            width: 440px;
+          }
+
+          .courseBtns {
+            margin-top: 29px;
+            display: flex;
+            gap: 30px;
+
+            .courseFirstBtn {
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 20px;
+              padding: 18px 54px;
+              border-radius: 500px;
+              background: var(--primary-button-bg-color);
+              color: var(--tertiary-button-bg-color);
+            }
+
+            .courseSecondBtn {
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 20px;
+              padding: 18px 54px;
+              border-radius: 500px;
+              border: 1px var(--primary-button-bg-color) solid;
+              background: var(--tertiary-button-bg-color);
+              color: #56A0F6;
             }
           }
-
-          .imgDesc {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-          }
         }
 
-        .box {
-          max-width: 430px;
-          width: 100%;
-          height: 260px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          justify-content: space-between;
-
-          @include tablet {
-            height: auto;
-            margin-bottom: 31px;
-            align-items: flex-start;
-          }
-
-          .btn {
-            height: 56px;
-            width: 384px;
-            margin: 30px 26px 0 0;
-
-            @include tabletMobile {
-              margin: 0;
-              width: 300px;
-              height: 51px;
-              font-size: 14px;
-              line-height: 110%;
-            }
-          }
+        .correctionBg {
+          position: absolute;
+          right: -30px;
+          top: -45px;
         }
       }
-    }
-
-    .heroBlock {
-      position: relative;
-
-      .hero {
-        border-radius: 16px;
-
-        @include tablet {
-          width: 340px;
-          height: 490px;
-        }
-
-        @include mobile {
-          width: 328px;
-          height: 460px;
-        }
-      }
-
-      .imgDescList {
-        position: absolute;
-        bottom: 10px;
-        left: 20px;
-        display: flex;
-        flex-wrap: wrap;
-
-        @include tabletMobile {
-          flex-direction: column;
-        }
-
-        .imgDesc {
-          margin: 0 10px 10px 0;
-        }
-      }
-    }
-
-    .imgDesc {
-      width: max-content;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 130%;
-      color: #fff;
-      padding: 8px 10px;
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(8px);
-      border-radius: 10px;
     }
   }
-}
-
-.formInPopup {
-  margin-top: 0!important;
-  box-shadow: none!important;
-  border: none!important;
-  padding-top: 0!important;
-  padding-bottom: 0!important;
 }

@@ -38,60 +38,46 @@ const Header = () => {
     return (
         <header className={style.header} id="top">
             <Menu>
-                <div className={style.menuItems}>
-                    <button onClick={() => smoothScrollTo('plans')} className={style.item}>Тарифы курса</button>
-                    <button onClick={() => smoothScrollTo('steps')} className={style.item}>Как проходит курс</button>
-                    <button onClick={() => smoothScrollTo('reviews')} className={style.item}>Отзывы</button>
-                </div>
                 {
                   isDesktop && <div className={style.menuItems}>
+                        <Link to="/ivan" className={style.item}>Иван Газин</Link>
                         <Link to="/irina" className={style.item}>Ирина Газин</Link>
+                        <Link to="/course" className={style.item}>Онлайн курс «Осанка и вальгус»</Link>
+                        <Link to="/webinar" className={style.item}>Вебинар</Link>
                     </div>
                 }
             </Menu>
             <div className={style.container}>
                 <div className={style.content}>
-                    <h2 className={style.title}>Иван Газин</h2>
-                    <p className={style.desc}>
-                        Ведущий специалист и основатель центра по нарушениям
-                        опорно двигательного аппарата у детей и взрослых.
-                    </p>
-                    {
-                        isMobile &&  <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
-                    }
+                    <div className={style.title}>
+                        <div className={style.titleFisrt}>
+                            <p className={style.titlePart}>«Вальгус</p>
+                            <Image className={style.titleIcon} src="../../../../images/course/header-icon.png" alt="happy client" />
+                            <p>+</p>
+                        </div>
+                        <p className={style.titleFisrt}>осанка, сколиоз»</p>
+                    </div>
 
-                    {
-                        !isMobile
-                        &&
-                        <div className={style.block}>
-                            <div className={style.happyClientBlock}>
-                                <Image className={style.happyClient} src="../../../../images/ivan/happy_client.jpg" alt="happy client"/>
-                                <span className={style.imgDesc}>
-                                счастливый пациент
-                            </span>
-                            </div>
-                            <div className={style.box}>
-                                <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
-                                { isDesktop && <Image src="../../../../images/ivan/header_leg.jpg" /> }
+                    <div className={style.headerCourse}>
+                        <Image className={style.headerPicture} src="../../../../images/course/header-picture.png" />
+                        <div className={style.correctionCourse}>
+                            <div className={style.course}>
+                                <p className={style.courseTitle}>Онлайн-курс коррекции</p>
+                                <p className={style.courseSubtitle}>
+                                    Излечите нарушения осанки и ножек у вашего ребенка 
+                                    за 1-3 мес без операции с помощью революционных методик!
+                                </p>
+                                <p className={style.courseDescription}>
+                                    Занимайтесь в удобное для вас время с максимальной эффективностью под полным контролем профессионала!
+                                </p>
+
+                                <div className={style.courseBtns}>
+                                    <button className={style.courseFirstBtn}>Смотреть тарифы</button>
+                                    <button className={style.courseSecondBtn}>Записаться на консультацию</button>
+                                </div>
                             </div>
                         </div>
-                    }
-                </div>
-                <div className={style.heroBlock}>
-                    <Image  className={style.hero} src="../../../../images/ivan/header_hero.jpg" alt="Ivan Gazyn"/>
-                    <div className={style.imgDescList}>
-                        <span className={style.imgDesc}>
-                            Физический терапевт
-                        </span>
-                        <span className={style.imgDesc}>
-                            Шрот терапевт
-                        </span>
-                        <span className={style.imgDesc}>
-                            Юмейхо терапевт
-                        </span>
-                        <span className={style.imgDesc}>
-                            Мануальный терапевт
-                        </span>
+                        <Image className={style.correctionBg} src="../../../../images/course/header-cover.png" />
                     </div>
                 </div>
             </div>

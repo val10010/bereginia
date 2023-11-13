@@ -2,7 +2,7 @@ import React from 'react';
 import { AWARDS_LIST } from './constants';
 
 import style from './style.scss';
-import Image from "Components/Image";
+import Image from 'Components/Image';
 
 const Awards = () => {
     return (
