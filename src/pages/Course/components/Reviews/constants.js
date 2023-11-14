@@ -1,0 +1,15 @@
+export const REVIEWS = [
+    '../../images/ivan/reviews/0.jpg',
+    '../../images/ivan/reviews/1.jpg',
+    '../../images/ivan/reviews/2.jpg',
+    '../../images/ivan/reviews/3.jpg',
+    '../../images/ivan/reviews/4.jpg',
+    '../../images/ivan/reviews/5.jpg',
+    '../../images/ivan/reviews/6.jpg',
+    '../../images/ivan/reviews/7.jpg',
+    '../../images/ivan/reviews/8.jpg',
+    '../../images/ivan/reviews/9.jpg',
+    '../../images/ivan/reviews/10.jpg',
+    '../../images/ivan/reviews/11.jpg',
+    '../../images/ivan/reviews/12.jpg',
+]

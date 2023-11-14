@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './style.scss';
 
-const Button = ({ children, href, variant, className, color, ...props }) => {
+const Button = ({ children, href, variant, className, ...props }) => {
     return (
         href
             ?

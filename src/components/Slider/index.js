@@ -1,3 +1,4 @@
+import { buildClassName } from 'Utils'
 import React, { useState } from 'react';
 import { css, Global } from '@emotion/react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
@@ -27,7 +28,7 @@ const slideTransitionStyles = css`
   }
 `;
 
-const Slider = ({ reviews = [], children, isBubblesNeeded, isButtonNeeded = true, className }) => {
+const Slider = ({ reviews = [], classNames = {}, children, isBubblesNeeded, isButtonNeeded = true, className }) => {
     const [index, setIndex] = useState(0);
     const bubbles = isBubblesNeeded &&  Array.from({length: reviews.length}, (_, i) => i);
 
@@ -45,10 +46,10 @@ const Slider = ({ reviews = [], children, isBubblesNeeded, isButtonNeeded = true
                 <div className={`${className}`}>
                     {
                         isButtonNeeded &&
-                        <div className={style.buttons} hidden={reviews.length <= 1}>
-                            <button onClick={onPrev} disabled={index === 0} className={style.prevButton}>
+                        <div className={`${buildClassName(['sliderButtons'], style, classNames)}`} hidden={reviews.length <= 1}>
+                            <button onClick={onPrev} disabled={index === 0} className={`${buildClassName(['sliderPrevButton'], style, classNames)}`}>
                             </button>
-                            <button onClick={onNext} disabled={index === reviews?.length - 1} className={style.nextButton}>
+                            <button onClick={onNext} disabled={index === reviews?.length - 1} className={`${buildClassName(['sliderNextButton'], style, classNames)}`}>
                             </button>
                         </div>
                     }

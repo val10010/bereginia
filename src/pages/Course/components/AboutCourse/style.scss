@@ -1,0 +1,83 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 50px;
+      line-height: 130%;
+      font-weight: 500;
+      color: var(--primary-text-color);
+
+      @include tablet {
+        font-size: 40px;
+      }
+
+      @include mobile {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .descBlock {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+      max-width: 440px;
+
+      p {
+        margin-bottom: 20px;
+
+        @include mobile {
+          margin-bottom: 16px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          color: var(--highlighted-text-color);
+        }
+      }
+    }
+  }
+
+  .videoBlock {
+    --video-block-height: auto;
+    --video-block-width: 100%;
+
+    .videoBg {
+      border-radius: 20px;
+      background: none;
+
+      .videoBgImg {
+        border-radius: 20px;
+      }
+
+      .videoBtn {
+        background: url('../../../../images/course/play-icon.svg');
+        width: 90px;
+        height: 90px;
+
+        @include mobile {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

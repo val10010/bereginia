@@ -1,0 +1,101 @@
+.container {
+  @include container;
+  position: relative;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .tariffs {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+
+    @include tabletMobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .premium {
+      --tariff-name-bg-color: #fff;
+      --tariff-name-text-color: #fff;
+
+      .name {
+        background: #fff;
+        border: 1px solid #56A0F6;
+        color: #56A0F6;
+      }
+
+    }
+
+    .vip {
+      --tariff-name-bg-color: #56A0F6;
+      --tariff-name-text-color: #fff;
+    }
+  }
+
+  .tabsItems {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mobile {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .tabsItem {
+      padding: 14px 30px;
+      border-radius: 50px;
+      border: 1px solid var(--border-light-gray, rgba(171, 171, 171, 0.50));
+      background: rgba(255, 255, 255, 0.30);
+      color: #333;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background: #56A0F6;
+        color: #fff;
+      }
+
+      @include mobile {
+        font-size: 14px;
+        margin-right: 16px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        background: #333;
+        color: #fff;
+      }
+    }
+  }
+}

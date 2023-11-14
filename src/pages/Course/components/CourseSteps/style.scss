@@ -1,0 +1,218 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+    flex-direction: column;
+  }
+
+  .content {
+    max-width: 465px;
+
+    @include tabletMobile {
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+
+    .title {
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      margin-bottom: 20px;
+      color: var(--primary-text-color);
+
+      @include tablet {
+        font-size: 40px;
+        margin-bottom: 18px;
+      }
+
+      @include mobile {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .desc {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .steps {
+
+    .stepWrapperContainer {
+      @include tabletMobile {
+        max-width: 100%;
+      }
+
+      @include mobile {
+        padding: 20px;
+        min-height: 240px!important;
+      }
+    }
+    .stepNumber {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+      margin-bottom: 10px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    .stepTitle {
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      margin-bottom: 20px;
+
+      @include mobile {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .stepDesc {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    .firstStep {
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    .secondStep {
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+
+      .stepWrapperContainer {
+        background-color: #FFEA7C;
+      }
+
+      .stepDesc {
+        color: var(--primary-text-color);
+      }
+    }
+
+    .thirdStep {
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+
+      .stepWrapperContainer {
+        background-color: #D1D1D1;
+      }
+
+      .stepTitle {
+        margin-bottom: 30px;
+      }
+
+      .list {
+        margin-bottom: 30px;
+
+        .toggle {
+          border-top: 1px solid #333;
+          padding: 12px;
+
+          &:last-child {
+            border-bottom: 1px solid #333;
+          }
+
+          .item {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 130%;
+            margin-bottom: 10px;
+            padding-right: 40px;
+
+            @include mobile {
+              font-size: 18px;
+            }
+
+            &:after {
+              background-image: url('../../../../images/course/plus.svg');
+              width: 34px;
+              height: 34px;
+
+              @include mobile {
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+
+          .toggleOpen {
+            &:after {
+              background-image: url('../../../../images/course/minus.svg');
+            }
+          }
+
+          .desc {
+            padding: 0 20px 10px 0;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+
+            .descItem {
+              margin-bottom: 10px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .forthStep {
+      .stepWrapperContainer {
+        background-color: #56A0F6;
+        min-height: 420px;
+
+        .stepNumber {
+          color: #fff;
+        }
+
+        .stepTitle {
+          color: #fff;
+        }
+
+        .stepDesc {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

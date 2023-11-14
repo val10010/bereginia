@@ -2,7 +2,7 @@
   width: 100%;
   padding: 15px 0;
 
-  .title {
+  .toggleTitle {
     font-family: var(--secondary-text-font);
     color: var(--primary-text-color);
     font-weight: 400;
@@ -23,13 +23,13 @@
     }
   }
 
-  .open {
+  .toggleOpen {
     &:after {
       background-image: url('../../images/minus.svg');
     }
   }
 
-  .inner {
+  .toggleInner {
     font-family: var(--secondary-text-font);
     color: var(--secondary-text-color);
     font-weight: 400;

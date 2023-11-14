@@ -1,0 +1,180 @@
+.header {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .content {
+    margin-top: 60px;
+    padding: 30px 30px 40px 30px;
+    border-radius: 20px;
+    background: #FFF;
+    position: relative;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    @include mobile {
+      margin-top: 80px;
+    }
+
+    &:after {
+      content: '';
+      @include retina-image('../../../../images/course/cover_video.jpg', '../../../../images/course/cover_video@2x.jpg', 350px, 260px);
+      position: absolute;
+      top: 250px;
+      right: 0;
+      width: 350px;
+      height: 260px;
+
+      @include tabletMobile {
+        display: none;
+      }
+    }
+
+    .title {
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 90px;
+      text-transform: uppercase;
+      color: var(--primary-text-color);
+      margin-bottom: 30px;
+
+      @include tablet {
+        font-size: 60px;
+        line-height: 78px;
+      }
+
+      @include mobile {
+        font-size: 36px;
+        line-height: 43px;
+      }
+
+      .titleInner {
+        color: var(--highlighted-text-color);
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .titleIcon {
+        margin-left: 20px;
+        width: 120px;
+        height: 128px;
+
+        @include tablet {
+          width: 70px;
+          height: 78px;
+        }
+
+        @include mobile {
+          width: 50px;
+          height: 60px;
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+
+      @include mobile {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        width: 300px;
+        height: 300px;
+        margin-right: 40px;
+
+        @include tablet {
+          width: 240px;
+          height: 383px;
+        }
+
+        @include mobile {
+          margin-right: 0;
+          margin-bottom: 30px;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .info {
+        width: 100%;
+
+        @include tabletMobile {
+          max-width: 500px;
+        }
+
+        .subtitle {
+          border-radius: 10px;
+          border: 1px solid #333;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          margin-bottom: 20px;
+          padding: 8px 10px;
+          width: max-content;
+          color: var(--primary-text-color);
+
+        }
+
+        .desc {
+          max-width: 440px;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          margin-bottom: 20px;
+          color: var(--secondary-text-color);
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+
+        .btnWrapper {
+          display: flex;
+          margin-top: 25px;
+
+          @include tabletMobile {
+            flex-wrap: wrap;
+          }
+
+          .btn {
+            width: max-content;
+            padding: 0 54px;
+            height: 56px;
+
+            &:first-child {
+              margin-right: 30px;
+
+              @include tabletMobile {
+                margin-right: 0;
+              }
+            }
+
+            @include tabletMobile {
+              margin-bottom: 10px;
+              width: 100%;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+
+            @include mobile {
+              font-size: 14px;
+              height: 50px;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

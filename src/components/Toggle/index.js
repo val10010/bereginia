@@ -1,10 +1,11 @@
+import { buildClassName } from 'Utils'
 import React, {
     useState, Children, cloneElement
 } from 'react';
 
 import style from './style.scss';
 
-const Toggle = ({ className, children, hasOpen  = false }) => {
+const Toggle = ({ className, classNames = {}, children, hasOpen  = false }) => {
     const [isOpen, setOpen] = useState(hasOpen);
 
     return (
@@ -14,12 +15,14 @@ const Toggle = ({ className, children, hasOpen  = false }) => {
                     if (i === 0) {
                         return cloneElement(child, {
                                 onClick: () => setOpen(!isOpen),
-                                className: `${ isOpen ? style.open : ''} ${style.title || ''} ${child?.props?.className || ''}`
+                                className: `${buildClassName(
+                                    ['toggleTitle', isOpen && 'toggleOpen'], style, classNames
+                                )} ${child?.props?.className || ''}`
                             }
                         );
                     }
                     return isOpen && cloneElement(child, {
-                            className: `${style.inner} ${child?.props?.className || ''}`
+                            className: `${style.toggleInner} ${child?.props?.className || ''}`
                         }
                     );
                 })

@@ -1,0 +1,91 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .list {
+    max-width: 600px;
+
+    @include tabletMobile {
+      max-width: 100%;
+    }
+
+    .toggle {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .toggleTitle {
+        &:after {
+          background: url('../../../../images/course/plus_blue.svg') no-repeat;
+          width: 34px;
+          height: 34px;
+        }
+      }
+
+      .toggleOpen {
+        &:after {
+          background: url('../../../../images/course/minus_blue.svg') no-repeat;
+          width: 34px;
+          height: 34px;
+        }
+      }
+
+      .item {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        margin-bottom: 10px;
+        padding-right: 40px;
+
+        @include mobile {
+          font-size: 18px;
+        }
+      }
+
+      .desc {
+        padding: 0 20px 10px 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+
+        .descItem {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
