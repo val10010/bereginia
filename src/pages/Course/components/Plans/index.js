@@ -12,7 +12,7 @@ const Plans = () => {
             <Tabs tabs={['Оплата сразу', 'Оплата частями']} classNames={style}>
                 <div className={style.tariffs}>
                     <Tariff
-                        price="18300 грн"
+                        price="19960 грн"
                         name="Премиум"
                         list={PREMIUM}
                         classNames={style}
@@ -24,7 +24,7 @@ const Plans = () => {
                         }}
                     />
                     <Tariff
-                        price="37956 грн"
+                        price="39990 грн"
                         name="VIP"
                         list={VIP}
                         classNames={style}

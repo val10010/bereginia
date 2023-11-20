@@ -1,7 +1,6 @@
 import React, { lazy, useEffect } from 'react';
 
 import FAQ from './components/FAQ';
-import Plans from './components/Plans';
 import Header from './components/Header';
 import Awards from './components/Awards';
 import Webinar from './components/Webinar';
@@ -28,7 +27,6 @@ const Home = () => {
                 <AboutConsultation/>
                 <AboutCourse/>
                 <Webinar/>
-                <Plans/>
                 <CourseSteps/>
                 <Reviews/>
                 <FAQ/>
