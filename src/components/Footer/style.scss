@@ -1,8 +1,8 @@
 .footer {
   @include container;
   padding: 20px 20px 20px 0;
-  border-top: 1px solid var(--primary-border-color);
-  border-bottom: 1px solid var(--primary-border-color);
+  border-top: 1px solid rgba(171, 171, 171, 0.50);
+  border-bottom: 1px solid rgba(171, 171, 171, 0.50);
   margin-bottom: 20px;
   position: relative;
 
@@ -83,7 +83,7 @@
       width: 100px;
       height: 100px;
       position: absolute;
-      top: 42%;
+      top: 35%;
       right: 0;
     }
   }
@@ -102,11 +102,67 @@
     color: #535353;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 20px;
     gap: 10px;
 
-    .item {
-      color: #535353;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bottomLinks {
+      display: flex;
+      flex-direction: column;
+
+      @include mobile {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .item {
+        color: #535353;
+        text-decoration: underline;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .bottomPayments {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      div {
+        margin-right: 10px;
+
+        @include mobile {
+          margin-bottom: 10px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .designAuthor {
+      margin-top: auto;
+
+      @include tabletMobile {
+        margin-left: auto;
+      }
+
+      @include mobile {
+        margin-left: unset;
+      }
     }
   }
 

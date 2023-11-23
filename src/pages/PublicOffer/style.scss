@@ -1,0 +1,19 @@
+.container {
+  @include container;
+
+  h1 {
+    @include title;
+    font-weight: bold;
+  }
+
+  h4 {
+    @include desc;
+    margin: 12px 0;
+    font-weight: bold;
+  }
+
+  li {
+    @include desc;
+    margin-bottom: 10px;
+  }
+}

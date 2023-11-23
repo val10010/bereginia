@@ -1,8 +1,11 @@
 import React, {lazy} from 'react';
 const Home = lazy(() => import('Pages/Home'));
 const Ivan = lazy(() => import('Pages/Ivan'));
+const Error = lazy(() => import('Pages/Error'));
 const Irina = lazy(() => import('Pages/Irina'));
 const Course = lazy(() => import('Pages/Course'));
+const Success = lazy(() => import('Pages/Success'));
+const PublicOffer = lazy(() => import('Pages/PublicOffer'));
 const NotFound = lazy(() => import('Pages/NotFound'));
 
 const routes = [
@@ -10,6 +13,9 @@ const routes = [
     { path: '/ivan', element: <Ivan />},
     { path: '/irina', element: <Irina /> },
     { path: '/course', element: <Course /> },
+    { path: '/public-offer', element: <PublicOffer /> },
+    { path: '/success', element: <Success /> },
+    { path: '/error', element: <Error /> },
     { path: '*', element: <NotFound /> },
 ];
 

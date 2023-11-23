@@ -37,12 +37,20 @@ const Footer = ({ email, phone }) => {
                     </div>
                 </div>
             </nav>
-            <ReactSVG  onClick={() => smoothScrollTo('top')} className={style.arrowToTop} src="../../images/arrow.svg"/>
+            <ReactSVG  onClick={() => smoothScrollTo('top')} className={style.arrowToTop} src="images/arrow.svg"/>
             <Map className={style.map}/>
             <div className={style.bottom}>
-                <p>Все права защищены. 2023</p>
-                <Link className={style.item} >Политика конфидециальности</Link>
-                <p>Дизайн разработан <Link className={style.textHighlighted}>Andrii S.</Link></p>
+                <div className={style.bottomLinks}>
+                    <Link className={style.item} >Политика конфидециальности</Link>
+                    <Link to="/public-offer" target="_blank" className={style.item} >Договор оферты</Link>
+                </div>
+                <div className={style.bottomPayments}>
+                    <ReactSVG src="images/payments/1.svg"/>
+                    <ReactSVG src="images/payments/2.svg"/>
+                    <ReactSVG src="images/payments/3.svg"/>
+                    <ReactSVG src="images/payments/4.svg"/>
+                </div>
+                <p className={style.designAuthor}>Дизайн разработан <Link className={style.textHighlighted}>Andrii S.</Link></p>
             </div>
         </footer>
     );

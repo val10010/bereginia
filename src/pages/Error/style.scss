@@ -1,0 +1,78 @@
+.container {
+  --arrow-bg-color: #298BFF;
+  --point-bg-color: #298BFF;
+  @include container;
+
+  .header {
+    padding: 30px 30px 40px 30px;
+    border-radius: 20px;
+    background: #fff;
+    margin: 40px 0;
+
+    @include mobile {
+      margin-top: 70px;
+    }
+
+    .title {
+      font-size: 100px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 20px;
+
+      @include tabletMobile {
+        font-size: 40px;
+      }
+    }
+
+    .desc {
+      @include desc;
+      color: #333;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      width: 246px;
+      height: 56px;
+      margin-top: 40px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include tabletMobile {
+      flex-direction: column;
+    }
+
+    .column {
+      max-width: 545px;
+
+      @include tabletMobile {
+        max-width: 100%;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        color: #333;
+        margin-bottom: 30px;
+
+        .cardTitle {
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          margin-bottom: 10px;
+        }
+
+        .cardDesc {
+          @include desc;
+
+        }
+      }
+    }
+  }
+}
