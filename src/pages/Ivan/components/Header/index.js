@@ -1,37 +1,13 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext } from 'react';
 import Menu from 'Components/Menu';
 import Image from 'Components/Image';
 import Button from 'Components/Button';
-import { useDispatch } from 'react-redux';
-import * as actions from 'Actions/actions';
 import { DeviceContext } from 'Contexts/Device/DeviceContext';
 
 import style from './style.scss';
 
 const Header = () => {
     const { isDesktop, isMobile } = useContext(DeviceContext);
-
-    const dispatch = useDispatch();
-
-    const handleBtnClick = useCallback(() => {
-        dispatch(actions.showPopup({
-            contents: [{
-                name: 'ReservationForm',
-                props: {
-                    className: style.formInPopup,
-                    title: 'Консультация',
-                    btnonclick: {
-                        actionName: 'showPopup',
-                        props: {
-                            contents: [{
-                                name: 'Success'
-                            }]
-                        }
-                    }
-                }
-            }]
-        }))
-    }, []);
 
     return (
         <header className={style.header} id="top">
@@ -44,7 +20,13 @@ const Header = () => {
                         опорно двигательного аппарата у детей и взрослых.
                     </p>
                     {
-                        isMobile &&  <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
+                        isMobile &&
+                        <Button
+                            className={style.btn}
+                            href="https://secure.wayforpay.com/button/b57ebd74e0e6b"
+                        >
+                            Записаться на консультацию
+                        </Button>
                     }
 
                     {
@@ -52,20 +34,25 @@ const Header = () => {
                         &&
                         <div className={style.block}>
                             <div className={style.happyClientBlock}>
-                                <Image className={style.happyClient} src="../../../../images/ivan/happy_client.jpg" alt="happy client"/>
+                                <Image className={style.happyClient} src="images/ivan/happy_client.jpg" alt="happy client"/>
                                 <span className={style.imgDesc}>
                                 счастливый пациент
                             </span>
                             </div>
                             <div className={style.box}>
-                                <Button onClick={handleBtnClick} target="_blank" className={style.btn} >Записаться на консультацию</Button>
-                                { isDesktop && <Image src="../../../../images/ivan/header_leg.jpg" /> }
+                                <Button
+                                    className={style.btn}
+                                    href="https://secure.wayforpay.com/button/b57ebd74e0e6b"
+                                >
+                                    Записаться на консультацию
+                                </Button>
+                                { isDesktop && <Image src="images/ivan/header_leg.jpg" /> }
                             </div>
                         </div>
                     }
                 </div>
                 <div className={style.heroBlock}>
-                    <Image  className={style.hero} src="../../../../images/ivan/header_hero.jpg" alt="Ivan Gazyn"/>
+                    <Image  className={style.hero} src="images/ivan/header_hero.jpg" alt="Ivan Gazyn"/>
                     <div className={style.imgDescList}>
                         <span className={style.imgDesc}>
                             Физический терапевт

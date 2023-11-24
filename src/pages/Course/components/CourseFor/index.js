@@ -15,7 +15,7 @@ const CourseFor = () => {
                 <p className={style.desc}>
                     Курс подойдет детям
                     <span className={style.age}>от 3 до 18 лет</span>
-                    со следующими нарушениями
+                    при следующих нарушениях
                 </p>
                 <div className={style.diagnosis}>
                     <Image className={style.diagnosisImg} src="images/course/diagnosis/1.jpg" alt="Вальгус" title="Вальгус"/>

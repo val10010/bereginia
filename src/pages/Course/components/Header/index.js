@@ -32,7 +32,7 @@ const Header = () => {
                     <div className={style.info}>
                         <h3 className={style.subtitle}>Онлайн-курс коррекции</h3>
                         <p className={style.desc}>
-                            Излечите нарушения осанки и ножек у вашего ребенка за 1-3 мес без операции
+                            Излечите нарушения осанки и ножек у вашего ребенка без операции
                             с помощью революционных методик!
                         </p>
                         <p className={style.desc}>

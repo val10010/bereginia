@@ -1,36 +1,13 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import Image from 'Components/Image';
 import { REVIEWS } from './constants';
 import Slider from 'Components/Slider';
 import Button from 'Components/Button';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import * as actions from 'Actions/actions';
 
 import style from './style.scss';
 
 const AboutConsultation = () => {
-    const dispatch = useDispatch();
-    const handleBtnClick = useCallback(() => {
-        dispatch(actions.showPopup({
-            contents: [{
-                name: 'ReservationForm',
-                props: {
-                    className: style.formInPopup,
-                    title: 'Консультация',
-                    btnonclick: {
-                        actionName: 'showPopup',
-                        props: {
-                            contents: [{
-                                name: 'Success'
-                            }]
-                        }
-                    }
-                }
-            }]
-        }))
-    }, []);
-
     return (
         <div className={style.container} id="consultation">
             <div className={style.content}>
@@ -64,7 +41,7 @@ const AboutConsultation = () => {
                 <div className={style.box}>
                     <Button
                         className={style.btn}
-                        onClick={handleBtnClick}
+                        href="https://secure.wayforpay.com/button/b57ebd74e0e6b"
                     >
                         Записаться на консультацию
                     </Button>
