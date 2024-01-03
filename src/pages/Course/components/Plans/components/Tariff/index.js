@@ -6,7 +6,7 @@ import * as actions from "Actions/actions";
 
 import style from './style.scss';
 
-const Tariff = ({ price, name, title, btnLink = '', list, className = '', classNames= {}, oldPrice, detailsContent }) => {
+const Tariff = ({ price, name, title, btnLink = '', list, className = '', classNames= {}, oldPrice, detailsContent, isPresentNeeded = false }) => {
     const dispatch = useDispatch();
     const handleDetailsBtnClick = useCallback(() => {
         dispatch(actions.showPopup({
@@ -35,13 +35,15 @@ const Tariff = ({ price, name, title, btnLink = '', list, className = '', classN
                         ))
                     }
                 </ul>
-                <p className={style.bonus}><span className={style.gift}/>  доступ к вебинару "Здоровье осанки и стоп у детей"</p>
+                {
+                    isPresentNeeded && <p className={style.bonus}><span className={style.gift}/>  доступ к вебинару "Здоровье осанки и стоп у детей"</p>
+                }
             </div>
             <Button
                 href={btnLink}
                 className={style.btn}
             >
-                оставить заявку
+                Купить
             </Button>
             {
                 detailsContent &&

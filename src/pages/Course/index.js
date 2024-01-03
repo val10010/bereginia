@@ -8,15 +8,15 @@ import Reviews from './components/Reviews';
 import Callback from './components/Callback';
 import Guarantee from './components/Guarantee';
 import CourseFor from './components/CourseFor';
+import TrialLesson from 'Components/TrialLesson';
 import AboutCourse from './components/AboutCourse';
-import TrialLesson from './components/TrialLesson';
 import CourseSteps from './components/CourseSteps';
 import VideoReviews from './components/VideoReviews';
 const Footer = lazy(() => import('Components/Footer'));
 
 import style from  './style.scss';
 
-const Home = () => {
+const Course = () => {
 
     return (
         <>
@@ -39,4 +39,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Course;

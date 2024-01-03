@@ -1,0 +1,64 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  .subtitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: #333;
+    text-align: center;
+    margin: 10px 0 20px;
+  }
+
+  .card {
+    padding: 20px 30px;
+    background: #FFF;
+    max-width: 800px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .desc {
+      @include desc;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+      margin-left: 20px;
+
+      @include mobile {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+}

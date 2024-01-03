@@ -1,0 +1,188 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+  text-align: center;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 100px;
+
+    .card {
+      padding: 30px;
+      border-radius: 20px;
+      background: #FFF;
+      max-width: 580px;
+
+      @include tabletMobile {
+        max-width: 100%;
+      }
+
+      .cardDesc {
+        @include desc;
+        font-weight: 400;
+        line-height: 130%;
+        color: var(--secondary-text-color);
+        display: flex;
+
+        .plusIcon {
+          width: 34px;
+          height: 34px;
+          margin-left: 30px;
+        }
+      }
+
+      .cardImg {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+    }
+
+    .cardLast {
+      padding: 30px;
+      border-radius: 20px;
+      background: #FFEA7C;
+      max-width: 580px;
+
+      @include tabletMobile {
+        max-width: 100%;
+      }
+
+      .cardTitle {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        color: var(--primary-text-color);
+        margin-bottom: 20px;
+      }
+
+      .cardDesc {
+        @include desc;
+        font-weight: 400;
+        line-height: 130%;
+        color: var(--primary-text-color);
+      }
+    }
+  }
+
+  .diagnosises {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .diagnosis {
+      padding: 20px 30px;
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+
+      @include tablet {
+        width: calc(50% - 20px);
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
+      .step {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin-right: 20px;
+        padding: 10px 0;
+        color: #fff;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+      }
+
+      .stepOne {
+        background: #FFEA7C;
+        color: #000;
+      }
+
+      .stepTwo {
+        background: #D59AFF;
+      }
+
+      .stepThree {
+        background: #56A0F6;
+      }
+
+      .stepFour {
+        background: #333;
+      }
+    }
+  }
+
+  .desc {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--primary-text-color);
+    margin: 30px 0;
+  }
+
+  .systems {
+    display: flex;
+    justify-content: space-between;
+
+    @include tabletMobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .system {
+      max-width: 280px;
+
+      .systemImg {
+        border-radius: 50%;
+        width: 280px;
+        height: 280px;
+        margin-bottom: 20px;
+      }
+
+      .systemDesc {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+      }
+    }
+  }
+}

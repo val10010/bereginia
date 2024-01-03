@@ -9,19 +9,6 @@
   @include tabletMobile {
     width: 100%;
     max-width: 700px;
-    margin-bottom: 50px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  @include mobile {
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   .header {

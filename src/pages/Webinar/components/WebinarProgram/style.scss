@@ -1,0 +1,114 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .wrapper {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+
+    @include tabletMobile {
+      flex-direction: column;
+    }
+  }
+
+  .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--primary-text-color);
+    max-width: 540px;
+
+    @include tabletMobile {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+  }
+
+  .desc {
+    @include desc;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--secondary-text-color);
+    max-width: 440px;
+
+    @include tabletMobile {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  .card {
+    max-width: 580px;
+
+    @include tabletMobile {
+      max-width: 100%;
+
+      &:first-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    .cardTitle {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--primary-text-color);
+      margin: 10px 0;
+    }
+
+    .cardDesc {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: var(--secondary-text-color);
+    }
+
+    .imageBlock {
+      position: relative;
+
+      .img {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+      }
+
+      .floatingBlock {
+        display: flex;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        .author {
+          padding: 8px 10px;
+          background: #fff;
+          color: var(--primary-text-color);
+          border-radius: 10px;
+          margin-right: 10px;
+        }
+
+        .duration {
+          padding: 8px 10px;
+          border-radius: 10px;
+          background: #56A0F6;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
+    height: 56px;
+    background: #333;
+    color: #fff;
+  }
+}

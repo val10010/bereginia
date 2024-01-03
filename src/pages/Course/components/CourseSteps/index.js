@@ -57,9 +57,6 @@ const CourseSteps = () => {
                                 ))
                             }
                         </ol>
-                        <h4 className={style.stepTitle}>
-                            Все видео уроки доступны навсегда
-                        </h4>
                     </StepWrapper>
                 </div>
                 <div className={style.forthStep}>
