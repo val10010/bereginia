@@ -1,9 +1,31 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import Button from 'Components/Button';
+import {useDispatch} from 'react-redux';
+import * as actions from 'Actions/actions';
 
 import style from './style.scss';
 
 const Callback = () => {
+    const dispatch = useDispatch();
+    const handleBtnClick = useCallback(() => {
+        dispatch(actions.showPopup({
+            contents: [{
+                name: 'ReservationForm',
+                props: {
+                    className: style.formInPopup,
+                    btnonclick: {
+                        actionName: 'showPopup',
+                        props: {
+                            contents: [{
+                                name: 'Success'
+                            }]
+                        }
+                    }
+                }
+            }]
+        }))
+    }, []);
+
     return (
         <section className={style.container}>
             <div className={style.content}>
@@ -14,7 +36,12 @@ const Callback = () => {
                 </p>
             </div>
             <div className={style.buttons}>
-                <Button className={style.btn}>Заполнить форму</Button>
+                <Button
+                    className={style.btn}
+                    onClick={handleBtnClick}
+                >
+                    Оформить заявку
+                </Button>
                 <Button
                     target="_blank"
                     variant="secondary"

@@ -8,7 +8,7 @@ import Reviews from './components/Reviews';
 import Callback from './components/Callback';
 import Guarantee from './components/Guarantee';
 import CourseFor from './components/CourseFor';
-import TrialLesson from 'Components/TrialLesson';
+import TrialLesson from './components/TrialLesson';
 import AboutCourse from './components/AboutCourse';
 import CourseSteps from './components/CourseSteps';
 import VideoReviews from './components/VideoReviews';

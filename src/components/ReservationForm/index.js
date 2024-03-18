@@ -9,7 +9,7 @@ import RadioButton from 'Components/RadioButton';
 
 import style from './style.scss';
 
-export const ReservationForm = ({ title, price = '2000 грн.', className, btnOnClick }) => {
+export const ReservationForm = ({ title, price, className, btnOnClick }) => {
     const {
         register,
         handleSubmit,
@@ -20,7 +20,7 @@ export const ReservationForm = ({ title, price = '2000 грн.', className, btnO
 
     const onSubmit = async (data) => {
        const res =  await innerServices.sendUserData({
-           formName: title,
+           formName: title || 'Форма обратной связи',
            price,
            ...data
        });
@@ -85,10 +85,12 @@ export const ReservationForm = ({ title, price = '2000 грн.', className, btnO
                     Даю согласие на оброботку своих персональных данных.
                     Подтверждаю, что ознакомился с Политекой оброботки персональных данных.
                 </Checkbox>
-                <div className={style.total}>
-                    <span>Всего:</span>
-                    <span className={style.price}>{ price }</span>
-                </div>
+                {
+                    price && <div className={style.total}>
+                        <span>Всего:</span>
+                        <span className={style.price}>{ price }</span>
+                    </div>
+                }
             </form>
         </>
     );

@@ -3,10 +3,12 @@ import { buildClassName } from 'Utils';
 import Button from 'Components/Button';
 import { useDispatch } from 'react-redux';
 import * as actions from "Actions/actions";
+import Toggle from "Components/Toggle";
+
 
 import style from './style.scss';
 
-const Tariff = ({ price, name, title, btnLink = '', list, className = '', classNames= {}, oldPrice, detailsContent, isPresentNeeded = false }) => {
+const Tariff = ({ price, name, title, btnLink = '', list, className = '', classNames= {}, oldPrice, detailsContent, isPresentNeeded = false, toggle }) => {
     const dispatch = useDispatch();
     const handleDetailsBtnClick = useCallback(() => {
         dispatch(actions.showPopup({
@@ -28,6 +30,17 @@ const Tariff = ({ price, name, title, btnLink = '', list, className = '', classN
             <div className={buildClassName(['content'], style, classNames )}>
                 { oldPrice && <p className={style.oldPrice}>{ oldPrice }</p> }
                 <p className={style.price}>{ price }</p>
+                {
+                    toggle &&
+                    <Toggle classNames={style} className={style.cardToggle}>
+                        <div>
+                            { toggle.title }
+                        </div>
+                        <div>
+                            { toggle.desc }
+                        </div>
+                    </Toggle>
+                }
                 <ul className={style.list}>
                     {
                         list.map(item => (

@@ -6,15 +6,12 @@ const Guarantee = () => {
     return (
         <section className={style.container}>
             <h3 className={style.title}>Мы гарантируем</h3>
-            <p className={style.desc}>
-                Первые результаты коррекции уже через <span>4 недели</span>!
-            </p>
             <div className={style.points}>
                 <div className={style.point}>
                     <h4 className={style.pointTitle}>Первое</h4>
                     <p className={style.pointDesc}>
                         Уникальную программу, подобранную с учетом
-                        нарушений конкретно вашего ребенка, видео уроки с доступом <span>навсегда</span>
+                        нарушений конкретно вашего ребенка
                     </p>
                 </div>
                 <div className={style.point}>

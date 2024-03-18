@@ -1,0 +1,67 @@
+.container {
+  @include container;
+  margin-bottom: 100px;
+  padding: 30px 30px 40px 30px;
+  background: #56A0F6;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  @include tabletMobile {
+    margin-bottom: 80px;
+  }
+
+  .title {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    color: #fff;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 50px;
+      margin-bottom: 18px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+  }
+
+  .desc {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  .btn {
+    background: #FFEA7C;
+    width: 340px;
+    height: 56px;
+    color: #333;
+
+    @include tablet {
+      width: 229px;
+      height: 51px;
+    }
+
+    @include mobile {
+      max-width: 300px;
+    }
+  }
+}

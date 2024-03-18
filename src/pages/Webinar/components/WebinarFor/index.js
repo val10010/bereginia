@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'Components/Image';
-import { ReactSVG } from 'react-svg'
+import Toggle from 'Components/Toggle';
+import NumberedList from 'Components/NumberedList';
 
 import style from './style.scss';
 
@@ -12,38 +13,87 @@ const WebinarFor = () => {
             </h3>
             <div className={style.wrapper}>
                 <div className={style.card}>
-                    <p className={style.cardDesc}>
-                        Если вы осознанная мама младенца от 0 мес. до 2 лет и хотите узнать,
-                        как вовремя предотвратить и выявить нарушения развития ножек и осанки у вашего ребенка.
-                        <ReactSVG src="images/webinar/plus.svg" className={style.plusIcon}/>
-                    </p>
-                    <Image src="images/webinar/cards/1.jpg" className={style.cardImg}/>
+                    <Toggle classNames={style} className={style.cardToggle}>
+                        <div>
+                            <p className={style.cardDesc}>
+                                Если вы осознанная мама младенца от 0 мес. до 2 лет и хотите узнать,
+                                как вовремя предотвратить и выявить нарушения развития ножек и осанки у вашего ребенка.
+                            </p>
+                            <Image src="images/webinar/cards/1.jpg" className={style.cardImg}/>
+                        </div>
+                        <div>
+                            <h5 className={style.cardInnerTitle}>Ваш результат после вебинара:</h5>
+                            <p className={style.cardInnerDesc}>Узнаете, как на самом деле формируется детская стопа и осанка, и как вам вовремя повлиять на ее правильное развитие, чтобы не допустить вальгуса и «плоскостопия» в будущем.</p>
+                            <NumberedList
+                                classNames={style}
+                                className={style.cardInnerList}
+                                list={[
+                                  'Разберетесь в критериях выбора правильной обуви для ребенка в любом магазине на любой бюджет, а также нужен ли супинатор для первых шагов.',
+                                  'Научитесь самостоятельно диагностировать нарушения у своего ребенка и сможете вовремя ему помочь.'
+                                ]}
+                            />
+                        </div>
+                    </Toggle>
                 </div>
                 <div className={style.card}>
-                    <p className={style.cardDesc}>
-                        Если ребенку в 2-4 года поставили диагноз «плоскостопие»,
-                        вальгус или Х-образные ноги, и сказали, что ничего не надо делать, так как «само пройдет»
-                        <ReactSVG src="images/webinar/plus.svg" className={style.plusIcon}/>
-                    </p>
-                    <Image src="images/webinar/cards/2.jpg" className={style.cardImg}/>
+                    <Toggle classNames={style} className={style.cardToggle}>
+                        <div>
+                            <p className={style.cardDesc}>
+                                Если ребенку в 2-4 года поставили диагноз «плоскостопие»,
+                                вальгус или Х-образные ноги, и сказали, что ничего не надо делать, так как «само пройдет»
+                            </p>
+                            <Image src="images/webinar/cards/2.jpg" className={style.cardImg}/>
+                        </div>
+                        <div>
+                            <h5 className={style.cardInnerTitle}>Ваш результат после вебинара:</h5>
+                            <p className={style.cardInnerDesc}>Узнаете, как на самом деле формируется детская стопа и осанка, и как вам вовремя повлиять на ее правильное развитие, чтобы не допустить вальгуса и «плоскостопия» в будущем.</p>
+                            <NumberedList
+                                classNames={style}
+                                className={style.cardInnerList}
+                                list={[
+                                    'Поймете, почему у одних детей вальгус проходит сам, а у других – нет. И как самой вовремя начать действовать еще на раннем этапе, когда ребенку можно легко помочь выйти из вальгуса.',
+                                    'Сэкономите деньги и время вашего ребенка.'
+                                ]}
+                            />
+                        </div>
+                    </Toggle>
                 </div>
                 <div className={style.card}>
-                    <p className={style.cardDesc}>
-                        Если у вас гибкий ребенок с гипермобильными суставами,
-                        у которого часто случаются вывихи и подвывихи суставов, и вам сказали,
-                        что это генетика, которая «не лечится».
-                        <ReactSVG src="images/webinar/plus.svg" className={style.plusIcon}/>
-                    </p>
-                    <Image src="images/webinar/cards/3.jpg" className={style.cardImg}/>
+                    <Toggle classNames={style} className={style.cardToggle}>
+                    <div>
+                        <p className={style.cardDesc}>
+                            Если у вас гибкий ребенок с гипермобильными суставами,
+                            у которого часто случаются вывихи и подвывихи суставов, и вам сказали,
+                            что это генетика, которая «не лечится».
+                        </p>
+                        <Image src="images/webinar/cards/3.jpg" className={style.cardImg}/>
+                    </div>
+                    <div>
+                        <h5 className={style.cardInnerTitle}>Ваш результат после вебинара:</h5>
+                        <p className={style.cardInnerDesc}>Узнаете, как на самом деле формируется детская стопа и осанка, и как вам вовремя повлиять на ее правильное развитие, чтобы не допустить вальгуса и «плоскостопия» в будущем.</p>
+                        <NumberedList
+                            classNames={style}
+                            className={style.cardInnerList}
+                            list={[
+                                'Узнаете, что на самом деле такая гибкость происходит у ребенка вследствие нарушения – дисплазии соединительной ткани.',
+                                'Поймете, какие анализы сдавать, как профилактировать, как корректировать это нарушение.'
+                            ]}
+                        />
+                    </div>
+                    </Toggle>
                 </div>
                 <div className={style.cardLast}>
                     <h4 className={style.cardTitle}>Общий результат после вебинара</h4>
                     <p className={style.cardDesc}>
-                        Разберетесь в настоящей причине ваших нарушений,
-                        узнаете современные эффективные методы их лечения.
-                        Узнаете, почему упражнения, которые вы делаете, не помогают.
-                        Получите самые эффективные упражнения от вальгуса и
-                        «плоскостопия» для мышц стопы, основанные на моем многолетнем опыте.
+                        <NumberedList
+                            classNames={style}
+                            className={style.cardInnerList}
+                            list={[
+                                'Разберетесь в настоящей причине ваших нарушений, узнаете современные эффективные методы их лечения.',
+                                'Узнаете, почему упражнения, которые вы делаете, не помогают.',
+                                ' Получите самые эффективные упражнения от вальгуса и «плоскостопия» для мышц стопы, основанные на моем многолетнем опыте.'
+                            ]}
+                        />
                     </p>
                 </div>
             </div>

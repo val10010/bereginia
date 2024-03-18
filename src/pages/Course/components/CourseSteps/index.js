@@ -43,7 +43,7 @@ const CourseSteps = () => {
                     <StepWrapper classNames={style}>
                         <p className={style.stepNumber}>3 этап</p>
                         <h4 className={style.stepTitle}>
-                            Освоение программы под контролем и с поддержкой терапевта в течении 3 меcяцев.
+                            Освоение программы самостоятельно либо с поддержкой куратора в зависимости от тарифа.
                         </h4>
                         <ol className={style.list}>
                             {

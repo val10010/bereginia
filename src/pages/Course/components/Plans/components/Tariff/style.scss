@@ -133,3 +133,23 @@
 .highlight {
   color: #56A0F6;
 }
+
+.cardToggle {
+  .toggleTitle {
+    padding: 8px 0;
+
+    &:after {
+      background-image: url('../../../../../../images/webinar/plus.svg');
+      width: 34px;
+      height: 34px;
+      top: 0;
+      transform: none;
+    }
+  }
+
+  .toggleOpen {
+    &:after {
+      background-image: url('../../../../../../images/webinar/minus.svg');
+    }
+  }
+}

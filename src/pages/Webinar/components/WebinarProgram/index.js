@@ -59,7 +59,7 @@ const WebinarProgram = () => {
                 </div>
             </div>
 
-            <Button className={style.btn}>Получить доступ к вебинару</Button>
+            <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={style.btn}>Получить доступ к вебинару</Button>
         </section>
     );
 };

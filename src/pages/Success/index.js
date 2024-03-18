@@ -24,12 +24,27 @@ const Success = () => {
             <div className={style.container}>
                 <section className={style.header}>
                     <h1 className={style.title}>Оплата прошла успешно</h1>
-                    <p className={style.desc}>
-                        Благодарим за покупку. В ближайшее время мы с вами свяжемся и предоставим доступ к продукту
-                    </p>
-                    <Button href={'/' + page} className={style.btn}>
-                        вернуться назад
-                    </Button>
+                    {
+                        page === 'webinar'
+                            ?
+                            <>
+                                <p className={style.desc}>Благодарим за покупку! Перейдите в телеграм канал, для получения записи вебинара.</p>
+                                <Button href='https://t.me/+1P82lClMbMM2MTEy' className={style.btn}>
+                                    перейти в телеграм канал
+                                </Button>
+                            </>
+                            :
+                            <>
+                                <p className={style.desc}>
+                                    Благодарим за покупку. В ближайшее время мы с вами свяжемся и предоставим доступ к продукту
+                                </p>
+                                <Button href={'/' + page} className={style.btn}>
+                                    вернуться назад
+                                </Button>
+                            </>
+
+
+                    }
                 </section>
                 <section className={style.products}>
                     <h3 className={style.productsTitle}>Все продукты</h3>
