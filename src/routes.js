@@ -8,6 +8,7 @@ const Success = lazy(() => import('Pages/Success'));
 const Webinar = lazy(() => import('Pages/Webinar'));
 const NotFound = lazy(() => import('Pages/NotFound'));
 const PublicOffer = lazy(() => import('Pages/PublicOffer'));
+const Test = lazy(() => import('Pages/Test'));
 
 const routes = [
     { path: '/', element: <Home /> , exact: true },
@@ -18,6 +19,7 @@ const routes = [
     { path: '/public-offer', element: <PublicOffer /> },
     { path: '/success', element: <Success /> },
     { path: '/error', element: <Error /> },
+    { path: '/test', element: <Test /> },
     { path: '*', element: <NotFound /> },
 ];
 
