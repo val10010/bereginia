@@ -31,6 +31,6 @@ jobs:
           git fetch origin
           git add -f build
           git commit -m "Deploying to gh-pages"
-          git push origin gh-pages
+          git push origin refs/heads/gh-pages:refs/remotes/origin/gh-pages
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
