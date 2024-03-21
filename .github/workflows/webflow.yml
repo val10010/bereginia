@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: val10010/bereginia
-          ref: gh-pages
+          ref: master
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
