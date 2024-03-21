@@ -14,6 +14,6 @@ jobs:
           node-version: '14.17.3'
       - run: npm i
       - name: Deploy
-    run: npx webflow devlink sync && npm run build && npx gh-pages -d build -u "val10010 <valantine10010@gmail.com>"
+        run: npx webflow devlink sync && npm run build && npx gh-pages -d build -u "val10010 <valantine10010@gmail.com>"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
