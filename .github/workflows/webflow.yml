@@ -18,6 +18,6 @@ jobs:
           git config --global user.email "valantine10010@gmail.com"
           git config --global user.name "val10010"
       - name: Deploy
-        run: npx webflow devlink sync && npm run build && npx gh-pages -d build
+        run: npx webflow devlink sync && npm run build && npm run deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
