@@ -4,30 +4,31 @@ on:
     types: [run-prod]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          repository: val10010/bereginia
-          ref: master  # Замените "main" на имя вашей основной ветки, если оно отличается
-          token: ${{ secrets.GITHUB_TOKEN }}  # Добавляем токен доступа для checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14.17.3'
-      - run: npm i
-      - name: Configure SSH
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run webflow devlink sync
+        run: npx webflow devlink sync
+
+      - name: Build project
+        run: npm run build
+
+      - name: Commit build to gh-pages branch
         run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - name: Deploy
-        run: |
-          npx webflow devlink sync &&
-          npm run build &&
-          GIT_USER="val10010" \
-          npx gh-pages -d build -u "val10010 <valantine10010@gmail.com>" --remote "origin"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout -b gh-pages
+          git add -f build
+          git commit -m "Deploying to gh-pages"
+          git push origin gh-pages
