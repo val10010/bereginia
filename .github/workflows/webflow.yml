@@ -28,6 +28,6 @@ jobs:
           npx webflow devlink sync &&
           npm run build &&
           GIT_USER="val10010" \
-          npx gh-pages -d build -u "val10010 <valantine10010@gmail.com>"
+          npx gh-pages -d build -u "val10010 <valantine10010@gmail.com>" --remote "origin"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
