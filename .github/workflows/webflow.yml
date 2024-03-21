@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: '14.17.3'
       - run: npm i
-      - run: npm run build
+      - run: npx webflow devlink sync && npm run build
