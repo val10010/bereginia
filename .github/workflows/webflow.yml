@@ -32,5 +32,5 @@ jobs:
           git add -f build
           git commit -m "Deploying to gh-pages"
           git push origin gh-pages
-        with:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
