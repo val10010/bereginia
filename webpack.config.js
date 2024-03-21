@@ -14,7 +14,7 @@ module.exports = {
         entry: "./src/index.js",
         output: {
             path: path.join(__dirname, "/build"),
-            filename: "[name].script.min.js?[fullhash]",
+            filename: "[name][hash].script.min.js?[fullhash]",
         },
         resolve: {
             alias: {
