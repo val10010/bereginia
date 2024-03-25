@@ -33,7 +33,7 @@ jobs:
           git stash save --include-untracked
           git checkout gh-pages
           git stash pop
-          git add -f build
+          git add -f build/*
           git commit -m "Deploying to gh-pages"
           git push origin gh-pages
         env:
