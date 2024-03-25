@@ -30,8 +30,10 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          git stash save --include-untracked
           git checkout gh-pages
-          git add -f build/*
+          git stash pop
+          git add -f build
           git commit -m "Deploying to gh-pages"
           git push origin gh-pages
         env:
