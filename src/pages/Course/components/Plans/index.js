@@ -15,8 +15,8 @@ const Plans = () => {
                 {
                     isMobile &&
                     <Tariff
-                        oldPrice="6900 грн"
-                        price="5900 грн"
+                        oldPrice="7900 грн"
+                        price="6900 грн"
                         name="Самостоятельный"
                         list={ECONOM}
                         classNames={style}
@@ -26,8 +26,8 @@ const Plans = () => {
                     />
                 }
                 <Tariff
-                    oldPrice="8 900 грн"
-                    price="7900 грн (старт 25.03)"
+                    oldPrice="9900 грн"
+                    price="8900 грн (набор закрыт)"
                     name="Групповой"
                     list={GROUP}
                     toggle={GROUP_TOGGLE}
@@ -37,8 +37,8 @@ const Plans = () => {
                     btnLink="https://secure.wayforpay.com/button/b5e8afffbd767"
                 />
                 <Tariff
-                    price="11900  грн"
-                    oldPrice="12900 грн"
+                    oldPrice="13900 грн"
+                    price="12900 грн"
                     name="Пакет индивидуальных  онлайн-тренировок с физическим терапевтом"
                     list={INDEPENDENT}
                     toggle={INDEPENDENT_TOGGLE}
@@ -50,8 +50,8 @@ const Plans = () => {
             </div>
             <div className={style.tariffs}>
                 <Tariff
-                    price="13 900 грн"
-                    oldPrice="14900 грн"
+                    oldPrice="15900 грн"
+                    price="14900 грн"
                     name="Индивидуальный Стандарт"
                     list={STANDARD}
                     toggle={STANDARD_TOGGLE}
@@ -62,8 +62,8 @@ const Plans = () => {
                     btnLink="https://secure.wayforpay.com/button/b9a2e30740578"
                 />
                 <Tariff
-                    price="20 900 грн"
-                    oldPrice="21900 грн"
+                    oldPrice="22900 грн"
+                    price="21900 грн"
                     name="Индивидуальный Премиум"
                     list={PREMIUM}
                     toggle={PREMIUM_TOGGLE}
