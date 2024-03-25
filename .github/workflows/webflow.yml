@@ -30,6 +30,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          git add build
           git stash push -m "build" build
           git checkout gh-pages
           git pull origin gh-pages
