@@ -30,7 +30,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git remote add origin https://github.com/val10010/bereginia.git
           git checkout gh-pages
           git add -f build
           git commit -m "Deploying to gh-pages"
