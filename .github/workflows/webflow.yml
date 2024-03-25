@@ -32,6 +32,7 @@ jobs:
           git config user.email "actions@github.com"
           git stash save --include-untracked
           git checkout gh-pages
+          rm -r build/*
           git stash pop
           git add -f build/*
           git commit -m "Deploying to gh-pages"
