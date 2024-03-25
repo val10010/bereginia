@@ -38,6 +38,7 @@ jobs:
           git add .
           git commit -m "Deploying to gh-pages"
           git push origin gh-pages
+          git pull origin gh-pages
           git stash pop
           git add -f build/*
           git commit -m "Deploying to gh-pages"
