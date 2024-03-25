@@ -30,7 +30,10 @@ jobs:
         run: npm install -g gh-pages
 
       - name: run GH
-        run: gh-pages -d build
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          gh-pages -d build
 
 #      - name: Commit build to gh-pages branch
 #        run: |
