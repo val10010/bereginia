@@ -31,7 +31,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout gh-pages
-          git add -f build
+          git add -f build/*
           git commit -m "Deploying to gh-pages"
           git push origin gh-pages
         env:
