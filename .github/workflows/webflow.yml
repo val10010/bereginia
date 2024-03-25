@@ -30,9 +30,11 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-
-      - name: Deploy to GitHub Pages
-        run: npx gh-pages -d build
-
+          git stash save --include-untracked
+          git checkout gh-pages
+          git stash pop
+          git add -f build/*
+          git commit -m "Deploying to gh-pages"
+          git subtree push --prefix build origin gh-pages
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
