@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v2
@@ -32,6 +34,6 @@ jobs:
           git checkout gh-pages
           git add -f build
           git commit -m "Deploying to gh-pages"
-          git push -f origin gh-pages
+          git push origin gh-pages
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
