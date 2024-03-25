@@ -31,7 +31,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git stash save --include-untracked
-          git checkout -b gh-pages
+          git checkout gh-pages
           git pull origin gh-pages
           rm *
           git stash pop
