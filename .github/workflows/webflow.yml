@@ -26,22 +26,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Commit build to gh-pages branch
+      - name: Deploy with gh-pages
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add build
-          git stash push -m "build" build
-          git checkout gh-pages
-          git pull origin gh-pages
-          rm -rf *
-          git add .
-          git commit -m "Deploying to gh-pages"
-          git push origin gh-pages
-          git pull origin gh-pages
-          git stash pop
-          git add .
-          git commit -m "Deploying to gh-pages"
-          git subtree push --prefix build origin gh-pages
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
