@@ -2,8 +2,8 @@ import React, { lazy } from 'react';
 
 import FAQ from './components/FAQ';
 import Team from './components/Team';
-import Plans from './components/Plans';
 import Header from './components/Header';
+import { Plans } from 'Main/devlink/Plans';
 import Reviews from './components/Reviews';
 import Callback from './components/Callback';
 import Guarantee from './components/Guarantee';

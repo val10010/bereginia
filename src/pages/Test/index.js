@@ -7,11 +7,12 @@ import style from './style.scss';
 
 const Home = () => {
     return (
-        <div className={style.main}>
-            <Header/>
-            <Plans/>
-            <Footer email="naturalmedical96@gmail.com" phone="+380 67 484 93 08"/>
-        </div>
+
+            <div className={style.main}>
+                <Header/>
+                <Plans/>
+                <Footer email="naturalmedical96@gmail.com" phone="+380 67 484 93 08"/>
+            </div>
     );
 };
 
