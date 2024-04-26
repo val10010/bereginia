@@ -1,6 +1,4 @@
 import React from 'react';
-import Toggle from 'Components/Toggle';
-import { WEEKLY_PLAN } from './constants'
 import StepWrapper from './components/StepWrapper';
 
 import style from './style.scss';
@@ -43,32 +41,14 @@ const CourseSteps = () => {
                     <StepWrapper classNames={style}>
                         <p className={style.stepNumber}>3 этап</p>
                         <h4 className={style.stepTitle}>
-                            Освоение программы самостоятельно либо с поддержкой куратора в зависимости от тарифа.
+                            Освоение программы самостоятельно либо с поддержкой специалиста. Подробнее читайте в разделе тарифов
                         </h4>
-                        <ol className={style.list}>
-                            {
-                                WEEKLY_PLAN.map(({ title, desc }) => (
-                                    <Toggle key={title} className={style.toggle} classNames={style} >
-                                        <li className={style.item} > { title } </li>
-                                        <div className={style.desc}>
-                                            <p className={style.descItem}>{desc}</p>
-                                        </div>
-                                    </Toggle>
-                                ))
-                            }
-                        </ol>
                     </StepWrapper>
                 </div>
                 <div className={style.forthStep}>
                     <StepWrapper classNames={style}>
                         <p className={style.stepNumber}>4 этап</p>
                         <h4 className={style.stepTitle}>Повторная консультация, оценка динамики</h4>
-                        <p className={style.stepDesc}>
-                            При необходимости проводится коррекция программы
-                            с учетом изменений, для дальнейших самостоятельных
-                            занятий 2 раза в неделю: 1 раз самостоятельно,
-                            2 раз - с обратной связью терапевта.
-                        </p>
                     </StepWrapper>
                 </div>
             </div>

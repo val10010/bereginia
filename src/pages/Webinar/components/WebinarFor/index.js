@@ -11,6 +11,46 @@ const WebinarFor = () => {
             <h3 className={style.title}>
                 Для кого этот вебинар?
             </h3>
+            <h3 className={style.subtitle}>
+                Если вы годами безрезультатно лечите:
+            </h3>
+            <div className={style.diagnosises}>
+                <div className={style.diagnosis}>
+                    <span className={`${style.step} ${style.stepOne}`}>01</span> сколиоз
+                </div>
+                <div className={style.diagnosis}>
+                    <span className={`${style.step} ${style.stepTwo}`}>02</span> плоскостопие
+                </div>
+                <div className={style.diagnosis}>
+                    <span className={`${style.step} ${style.stepThree}`}>03</span> вальгус
+                </div>
+                <div className={style.diagnosis}>
+                    <span className={`${style.step} ${style.stepFour}`}>04</span> нарушение осанки
+                </div>
+            </div>
+            <p className={style.desc}>
+                этими неэффективными и устаревшими методами лечения:
+            </p>
+            <div className={style.systems}>
+                <div className={style.system}>
+                    <Image src="images/webinar/systems/1.jpg" className={style.systemImg}/>
+                    <p className={style.systemDesc}>
+                        Ортопедическая обувь и стельки
+                    </p>
+                </div>
+                <div className={style.system}>
+                    <Image src="images/webinar/systems/2.jpg" className={style.systemImg}/>
+                    <p className={style.systemDesc}>
+                        Электрофорез с кальцием
+                    </p>
+                </div>
+                <div className={style.system}>
+                    <Image src="images/webinar/systems/3.jpg" className={style.systemImg}/>
+                    <p className={style.systemDesc}>
+                        Обычная гимнастика и лечебная физкультура
+                    </p>
+                </div>
+            </div>
             <div className={style.wrapper}>
                 <div className={style.card}>
                     <Toggle classNames={style} className={style.cardToggle}>
@@ -76,7 +116,7 @@ const WebinarFor = () => {
                             className={style.cardInnerList}
                             list={[
                                 'Узнаете, что на самом деле такая гибкость происходит у ребенка вследствие нарушения – дисплазии соединительной ткани.',
-                                'Поймете, какие анализы сдавать, как профилактировать, как корректировать это нарушение.'
+                                'Поймете, как помочь своему ребенку'
                             ]}
                         />
                     </div>
@@ -91,49 +131,9 @@ const WebinarFor = () => {
                             list={[
                                 'Разберетесь в настоящей причине ваших нарушений, узнаете современные эффективные методы их лечения.',
                                 'Узнаете, почему упражнения, которые вы делаете, не помогают.',
-                                ' Получите самые эффективные упражнения от вальгуса и «плоскостопия» для мышц стопы, основанные на моем многолетнем опыте.'
+                                'Получите бесплатную экспресс-диагностику по фото ребенка от эксперта в лечении вальгуса, плоскостопия и осанки, физического терапевта Ивана Газин.'
                             ]}
                         />
-                    </p>
-                </div>
-            </div>
-            <h3 className={style.title}>
-                Если вы годами безрезультатно лечите:
-            </h3>
-            <div className={style.diagnosises}>
-                <div className={style.diagnosis}>
-                    <span className={`${style.step} ${style.stepOne}`}>01</span> сколиоз
-                </div>
-                <div className={style.diagnosis}>
-                    <span className={`${style.step} ${style.stepTwo}`}>02</span> плоскостопие
-                </div>
-                <div className={style.diagnosis}>
-                    <span className={`${style.step} ${style.stepThree}`}>03</span> вальгус
-                </div>
-                <div className={style.diagnosis}>
-                    <span className={`${style.step} ${style.stepFour}`}>04</span> нарушение осанки
-                </div>
-            </div>
-            <p className={style.desc}>
-                этими неэффективными и устаревшими методами лечения:
-            </p>
-            <div className={style.systems}>
-                <div className={style.system}>
-                    <Image src="images/webinar/systems/1.jpg" className={style.systemImg}/>
-                    <p className={style.systemDesc}>
-                        Ортопедическая обувь и стельки
-                    </p>
-                </div>
-                <div className={style.system}>
-                    <Image src="images/webinar/systems/2.jpg" className={style.systemImg}/>
-                    <p className={style.systemDesc}>
-                        Электрофорез с кальцием
-                    </p>
-                </div>
-                <div className={style.system}>
-                    <Image src="images/webinar/systems/3.jpg" className={style.systemImg}/>
-                    <p className={style.systemDesc}>
-                        Обычная гимнастика и лечебная физкультура
                     </p>
                 </div>
             </div>

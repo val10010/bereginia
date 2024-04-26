@@ -7,6 +7,7 @@ import { Plans } from 'Main/devlink/Plans';
 import Reviews from './components/Reviews';
 import Callback from './components/Callback';
 import Guarantee from './components/Guarantee';
+import Feedbacks from './components/Feedbacks';
 import CourseFor from './components/CourseFor';
 import TrialLesson from './components/TrialLesson';
 import AboutCourse from './components/AboutCourse';
@@ -30,6 +31,7 @@ const Course = () => {
                 <Team/>
                 <Plans/>
                 <VideoReviews/>
+                <Feedbacks/>
                 <FAQ/>
                 <TrialLesson/>
                 <Callback/>

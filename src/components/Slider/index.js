@@ -43,7 +43,7 @@ const Slider = ({ reviews = [], classNames = {}, children, isBubblesNeeded, isBu
     return (
         <>
             <Global styles={slideTransitionStyles} />
-                <div className={`${className}`}>
+                <div className={`${className || ''}`}>
                     {
                         isButtonNeeded &&
                         <div className={`${buildClassName(['sliderButtons'], style, classNames)}`} hidden={reviews.length <= 1}>

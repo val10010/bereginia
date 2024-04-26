@@ -9,10 +9,7 @@ const TrialLesson = () => {
             <h4 className={style.title}>
                 Начните изменения прямо сейчас
             </h4>
-            <p className={style.desc}>
-                Ценные знания от экспертов за 490 грн вместо 1200 грн.
-            </p>
-            <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={style.btn}>Получить доступ</Button>
+            <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={style.btn}>зарегистрироваться</Button>
         </section>
     );
 };
