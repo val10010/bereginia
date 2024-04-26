@@ -8,7 +8,7 @@ import style from './style.scss';
 const Feedbacks = () => {
     return (
         <section className={style.container}>
-            <h4 className={style.title}>Отзывы пациентов</h4>
+            <h4 className={style.title}>Отзывы о вебинаре</h4>
            <div className={style.content}>
                <Slider reviews={REVIEWS} classNames={style}>
                    {
