@@ -25,12 +25,7 @@ const Header = () => {
                             18 мая, 18:00
                         </span>
                     </p>
-                    <Button
-                        variant="primary"
-                        className={style.button}
-                    >
-                        зарегистрироваться
-                    </Button>
+                    <Button className={`${style.button} sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`}>зарегистрироваться</Button>
                 </div>
                 <Image src="images/webinar/hero.jpg" className={style.img}/>
             </div>
