@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef } from 'react';
 import Menu from 'Components/Menu';
 import Image from 'Components/Image';
 import Button from 'Components/Button';
@@ -6,6 +6,18 @@ import Button from 'Components/Button';
 import style from './style.scss';
 
 const Header = () => {
+    const btn = useRef(null);
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page');
+
+    useEffect( () => {
+        if(page) {
+            setTimeout(() => {
+                btn?.current?.click();
+
+            }, 1500)
+        }
+    }, [])
 
     return (
         <header className={style.header} id="top">
@@ -25,7 +37,8 @@ const Header = () => {
                             18 мая, 18:00
                         </span>
                     </p>
-                    <Button className={`${style.button} sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`}>зарегистрироваться</Button>
+                    <button ref={btn} style={{opacity: 0}} className={`sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`} >зарегистрироваться</button>
+                    <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={`${style.button}`} >зарегистрироваться</Button>
                 </div>
                 <Image src="images/webinar/hero.jpg" className={style.img}/>
             </div>
