@@ -12,7 +12,7 @@ const TrialLesson = () => {
             <p className={style.price}>
                 390 грн. <span className={style.crossedPrice}>1200 грн.</span>
             </p>
-            <Button className={`${style.btn} sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`}>зарегистрироваться</Button>
+            <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={`${style.btn}`}>зарегистрироваться</Button>
         </section>
     );
 };
