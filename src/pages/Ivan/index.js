@@ -24,8 +24,6 @@ const Home = () => {
                 <Awards/>
                 <AboutServices/>
                 <AboutConsultation/>
-                <AboutCourse/>
-                <Webinar/>
                 <CourseSteps/>
                 <Reviews/>
                 <FAQ/>

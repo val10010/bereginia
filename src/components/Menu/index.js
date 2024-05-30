@@ -5,12 +5,12 @@ import Tablet from './components/Tablet';
 import Mobile from './components/Mobile';
 import Desktop from './components/Desktop';
 
-const Menu = ({ children }) => {
+const Menu = ({ children, isHideBurger }) => {
     const { isMobile, isTablet, isDesktop  } = useContext(DeviceContext);
 
     return (
         <>
-            { isMobile && <Mobile>{ children }</Mobile> }
+            { isMobile && <Mobile isHideBurger={isHideBurger}>{ children }</Mobile> }
             { isTablet && <Tablet>{ children }</Tablet> }
             { isDesktop && <Desktop>{ children }</Desktop> }
         </>

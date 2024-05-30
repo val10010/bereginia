@@ -32,7 +32,7 @@
     }
   }
 
-  .desc {
+  .price {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -46,6 +46,11 @@
 
     @include mobile {
       margin-bottom: 30px;
+    }
+
+    .crossedPrice {
+      text-decoration: line-through;
+      opacity: 0.5;
     }
   }
 

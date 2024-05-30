@@ -46,7 +46,6 @@ const Header = () => {
                                 >
                                     Записаться на консультацию
                                 </Button>
-                                { isDesktop && <Image src="images/ivan/header_leg.jpg" /> }
                             </div>
                         </div>
                     }

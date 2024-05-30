@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <header className={style.header} id="top">
-            <Menu/>
+            <Menu isHideBurger={true} />
             <div className={style.wrapperContent}>
                 <div className={style.content}>
                     <h3 className={style.smallTitle}>Вебинар</h3>
@@ -34,7 +34,7 @@ const Header = () => {
                     <p className={style.date}>
                         Ждём Вас:
                         <span>
-                            18 мая, 18:00
+                           08.06.24 17:00
                         </span>
                     </p>
                     <button ref={btn} style={{opacity: 0}} className={`sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`} >зарегистрироваться</button>

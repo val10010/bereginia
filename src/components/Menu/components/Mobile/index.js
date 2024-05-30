@@ -5,7 +5,7 @@ import { TABLET_MOBILE_LINKS } from '../../constants';
 
 import style from './style.scss';
 
-const Mobile = () => {
+const Mobile = (isHideBurger = false) => {
     const [isActive, setActive] = useState(false);
 
     useLockBodyScroll(isActive);
@@ -18,9 +18,16 @@ const Mobile = () => {
 
            <nav className={`${style.menu} ${isActive ? style.active : ''}`}>
                <Link to='/' className={style.logo}>Bereginia.com</Link>
-               { !isActive
-                   ? <button  className={style.openBtn} onClick={handleOpenBtnClick}>Меню</button>
-                   : <button  className={style.closeBtn} onClick={handleCloseBtnClick}>закрыть</button> }
+               {
+                 !isHideBurger &&
+                     <>
+                       { !isActive
+                           ? <button  className={style.openBtn} onClick={handleOpenBtnClick}>Меню</button>
+                           : <button  className={style.closeBtn} onClick={handleCloseBtnClick}>закрыть</button>
+                       }
+                     </>
+               }
+
            </nav>
 
            {

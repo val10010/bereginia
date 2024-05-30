@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <header className={style.header} id="top">
-            <Menu/>
+            <Menu isHideBurger={true}/>
             <div className={style.content}>
                 <h1 className={style.title}>
                     <span className={style.titleInner}>«Вальгус  <ReactSVG className={style.titleIcon} src="images/course/3D-icon.svg" /></span> {'+ '}
