@@ -37,7 +37,7 @@ const Header = () => {
                     <p className={style.date}>
                         Ждём Вас:
                         <span>
-                           08.06.24 17:00
+                           15.06.24 17:00
                         </span>
                     </p>
                     <button ref={btn} style={{opacity: 0}} className={`sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`} >зарегистрироваться</button>
