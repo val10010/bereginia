@@ -13,10 +13,6 @@ export const TABLET_MOBILE_LINKS = {
         {
             path: '/course',
             name: 'Онлайн курс «Осанка и вальгус»'
-        },
-        {
-            path: '/webinar',
-            name: 'Вебинар'
         }
     ]
 };

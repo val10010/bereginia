@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <header className={style.header} id="top">
-            <Menu isHideBurger={true} />
+            <Menu />
             <div className={style.wrapperContent}>
                 <div className={style.content}>
                     <h3 className={style.smallTitle}>Вебинар</h3>
@@ -31,17 +31,7 @@ const Header = () => {
                     <p className={style.desc}>
                         Узнайте, как уберечься от ошибок, которые делают 90% родителей и из-за незнания вредят своим детям, сами провоцируя «плоскостопие», вальгус и нарушения осанки у своих детей.
                     </p>
-                    <p className={style.subdesc}>
-                      Запись вебинара будет.
-                    </p>
-                    <p className={style.date}>
-                        Ждём Вас:
-                        <span>
-                           15.06.24 17:00
-                        </span>
-                    </p>
-                    <button ref={btn} style={{opacity: 0}} className={`sp_popup_c49057a4-62ca-4722-bb0a-a33e7d6cafab`} >зарегистрироваться</button>
-                    <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={`${style.button}`} >зарегистрироваться</Button>
+                    <Button href="https://secure.wayforpay.com/button/b13239f540d8b" className={`${style.button}`} > Купить</Button>
                 </div>
                 <Image src="images/webinar/hero.jpg" className={style.img}/>
             </div>
